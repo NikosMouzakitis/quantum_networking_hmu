@@ -1,0 +1,105 @@
+\documentclass[12pt,a4paper]{report}
+
+% Packages
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{setspace}
+
+% Title and Author (adjust the spacing as needed)
+\title{\LARGE \textbf{A neural network backed DOS Detection system for CAB Bus}}
+\author{}
+\date{\large On: \today}
+
+% Begin Document
+\begin{document}
+
+% Title Page
+\makeatletter
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+       { \includegraphics[width=6cm]{ELMEPA.png}}\\[1cm]
+
+    {\LARGE \textbf{A neural network backed DOS Detection system for CAB Bus}}\\[1cm]
+    Project for\\[1cm]
+    
+    Computational Intelligence Master's program course\\[0.5cm]
+    
+    
+    
+    \textbf{Written By:}{Nikolaos Mouzakitis, Adamantios Margiolas }\\[1cm]
+    \date{\large Date Last Edited: \today}
+    {\@date\\}
+\end{titlepage}
+\makeatother
+% Abstract
+
+
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+In this presented application, as a real use case of neural networks,
+utilizing their property of predicting among different classes after 
+an appropriate training phase, neural networks have been used in order
+to classify network traffic on an automotive channel (CAN Bus) as normal
+or intrusion(DOS attack).
+
+% Table of Contents
+\tableofcontents
+
+% Chapters
+\chapter{Introduction}
+
+DNA sequence assembly is a key task in genomics, enabling breakthroughs across a vast application field,
+including medical research, evolutionary biology, synthetic biology, foresnic investigation, metagenomics and agriculture \cite{wikiDNASEQASS}
+Results provided by this process allows researchers to get usefull insights into life's complexity.
+The goal of DNA sequencing assembly is to provide the ability of reconstructing an original genome from a
+partially fragmented overlapping versions of itself obtained through sequencing technologies. 
+It holds a critical role for the decoding the genetic information of organisms enabling in better understanding
+of biological functions and  mechanisms underlying evolution, health and disease. 
+With the rapid evolution of sequencing technologies, such as next-generation sequencing (NGS) and long-read platforms, 
+have generated vast amounts of data, necessitating efficient and accurate assembly algorithms to piece together fragmented sequences.
+There are two types in the process of DNA sequence assembly: the de novo assembly, which is the reconstruction of a genomes without having any
+reference of the original gemone, 
+and the reference-based assembly, where the original genome is known and the fragmented genome parts have to be aligned with the reference sequence. 
+In this report we exploted and implemented an application for DNA sequence assembly by integrating a solution for traveling salesman problem with
+a genetic algorithm approach using a reference-based method.
+
+\chapter{Related Work}
+
+\chapter{Methodology}
+ 
+
+ Related to the methodology followed in our project, the work of \textit{Nalecz et al.} \cite{Nalecz}  was
+ examined, and implemented in a similar way the 
+ distance matrix used for the DNA assembly. 
+ Also as a complementary material, the study of 
+ of \textit{Varsamis et al.} 
+ \cite{VARSAMIS2023105037}, have provided a helpful 
+ example for understanding better the nature of the
+ problem even if our implementation did not
+ followed the graph walk proposed by them.
+
+ 
+
+ 
+
+
+
+\chapter{Implementation}
+    \section{Hw and Sw Requirements}
+    
+    \section{Data Details}
+    \section{Method}
+    \section{Evaluation Measures}
+
+
+\chapter{Conclustion}
+
+
+\bibliographystyle{plain}
+
+\bibliography{references}
+ 
+\end{document}

@@ -1,0 +1,15 @@
+\begin{thebibliography}{1}
+
+
+\bibitem{Khristo2020}
+Khristo, Y., Asaad, B. and Abdelbaki, N. “Quantum Networking, where it is headed,” in \textit{Proc. 16th Int. Computer Engineering Conf. (ICENCO)}, Cairo, Egypt, Dec. 2020, pp. 1–4.
+
+\bibitem{qutip}
+	Johansson, J. R., Nation, P. D. and Nori, F. \textit{“QuTiP 2: A Python framework for the dynamics of open quantum systems”, Comp. Phys. Comm. 184}, 1234 (2013).
+
+\bibitem{bb84}
+	Bennett, C. H and Brassard, G. "Quantum cryptography: Public key distribution and coin tossing," in \textit{ Proc. IEEE Int. Conf. Computers, Systems and Signal Processing}, 1984, pp. 175–179.
+
+
+\end{thebibliography}
+

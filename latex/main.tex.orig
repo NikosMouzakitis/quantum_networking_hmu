@@ -1,0 +1,152 @@
+\documentclass[12pt,a4paper]{report}
+
+% Packages
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{setspace}
+
+% Title and Author (adjust the spacing as needed)
+\title{\LARGE \textbf{A neural network backed DOS Detection system for CAB Bus}}
+\author{}
+\date{\large On: \today}
+
+% Begin Document
+\begin{document}
+
+% Title Page
+\makeatletter
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+       { \includegraphics[width=6cm]{ELMEPA.png}}\\[1cm]
+
+    {\LARGE \textbf{Quantum Networking: Explore QKD and quantum internet}}\\[1cm]
+    Project for\\[1cm]
+    
+    Advanced Networks Master's program course\\[0.5cm]
+    
+    
+    
+    \textbf{Written By:}{Nikolaos Mouzakitis MTP321}\\[1cm]
+    \date{\large Date Last Edited: \today}
+    {\@date\\}
+\end{titlepage}
+\makeatother
+% Abstract
+
+
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+Quantum networking represents a transformative advancement in secure communication, 
+with Quantum Key Distribution (QKD) and the quantum internet standing at its core. 
+Unlike the widely available and adopted classical systems, QKD leverages certain mechanical principles
+from the field of quantum physics in order to theoretically guarantee unbreakable encryption schemes, 
+addressing critical vulnerabilities in modern cryptographic methods. 
+In the dawn of its rise, quantum internet promises a global network enabling unprecedented levels of 
+secure communication, distributed quantum computing, and advanced scientific applications.
+
+% Table of Contents
+\tableofcontents
+
+% Chapters
+\chapter{Introduction}
+
+Quantum networking stands as the next frontier in communication technology,
+which is expected to leverage principles of quantum mechanics for
+achieving unprecedented levels in security, as well as in computational capability. 
+In contrast to ordinary classical networks, quantum networks rely on quantum states 
+of the likes of superposition and entanglement to achieve operations impossible for
+the classic networking schemes. 
+These attributes become of vital importance in application areas like secure communications, 
+where quantum key distribution (QKD) promises provable security against eavesdropping, 
+and in distributed computing in cases where quantum nodes could 
+collaborate to solve problems beyond the reach of classical networks. 
+In the modern world, where the requirement for global data security keeps following 
+an increasing trend, quantum networking is considered as a robust solution 
+for protecting sensitive informations.
+Also  mixed architectures combining classical and quantum networks
+in novel frameworks could lead into much more efficient, applications... 
+
+%#############################################
+Challenges arise although; despite the promising potential in quantum networking,
+it faces technical and theoretical obstacles that need to be surpassed 
+in order to achieve and enable an entirely practical implementation and adoption.
+Because of the very nature of quantum mechanichs, quantum internet is opted to utilize concepts
+without classical counterparts with the likes of quantum entanglment, 
+no-cloning theorem, quantum measurement and teleportation. 
+In the classical and well known model of computation experienced so far, 
+we deeply rely on the fact that information can be read and copied, a concept that does not hold
+for quantum networking. The scalability remains one of the main issues, 
+because as current quantum networks are limited in the number of nodes and the 
+distances they can span without degradation. 
+This limitation comes from the fragile nature of the quantum states,
+which are very sensitive on environmental noise and decoherence especially over long distances. 
+
+As a countermeassure the developments of reliable quantum repeaters 
+and advanced error-correction schemes are 
+required to break these barriers. Additionally, 
+the efficient generation, distribution, 
+and storage of entanglement across a network pose critical hurdles, 
+as maintaining high fidelity in entangled 
+states is necessary for the network's functionality. 
+Another key challenge lies in integrating 
+quantum systems with classical infrastructure, 
+which requires seamless coordination between 
+vastly different operational paradigms. 
+Addressing these challenges is crucial for moving quantum 
+networking beyond the experimental 
+phase and into real-world applications.
+The computing power of a quantum computer is exponentialy 
+related to the number of qubits that comprise it; where a qubit is the quantum 
+counterpart of the classical bit and is the building block of a quantum computers.
+
+Overview of Your Paper
+This paper explores the current state of quantum networking, its foundational principles, and its potential applications. The introduction provides a broad overview of the field, emphasizing its importance in secure communication and distributed computing. The related work section surveys recent advancements in quantum networking, with a focus on technologies such as quantum key distribution, entanglement distribution, and quantum repeaters. In the methodology section, we describe a theoretical framework and propose a simulation-based approach to study key aspects of quantum networking. The results section presents findings from our simulations, highlighting performance metrics such as communication fidelity and error rates under varying network conditions. The discussion interprets these findings in the context of existing literature, identifying both strengths and limitations of current technologies. Finally, the conclusion summarizes the paper's contributions and proposes future directions for research, including pathways to overcome technical challenges and achieve large-scale implementation of quantum networks.
+
+
+
+\chapter{Related Work}
+In recent years, quantum networking has gained 
+significant attention due to its potential to ignite a revolution in 
+secure communications and distributed computing. 
+Khristo et al. \cite{Khristo2020} have provided an overview of the field's 
+current status but also of the desired future directions. 
+In their work the key advancements and challenges in the 
+development of quantum networks have been discussed while in addition
+explored the integration of the quantum key distribution (QKD) 
+and a broader vision for the quantum internet.
+
+
+\chapter{Methodology}
+For the purposes of this project, a 
+simulation approach using software tools
+have been employed in order to enable the 
+demonstration of selected concepts in quantum networking.
+QuTiP(Quantum Toolbox in Python)\cite{qutip}, an open source framework 
+written in Python, has been used for the simulations.
+
+\section{BB84 Quantum Key Distribution Protocol}
+
+BB84 protocol is a foundational work in the field 
+of quantum key distribution (QKD) protocols,
+been proposed back in 1984 \cite{bb84}.
+It realizes a secure communication of a secret cryptographic key
+alongside two entities, over an insecure medium/channel 
+by using principles of quantum mechanics.
+
+
+
+
+\chapter{Results}
+\chapter{Discussion}
+
+\chapter{Conclustion}
+
+
+
+\bibliographystyle{plain}
+\bibliography{references}
+ 
+\end{document}
