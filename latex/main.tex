@@ -135,7 +135,8 @@ Project for\\[1cm]
 		and a broader vision for the quantum internet.
 
 
-	\chapter{Methodology}
+	\chapter{Methodology and Results}
+		
 		For the purposes of this project, a
 		simulation approach using software tools
 		have been employed in order to enable the
@@ -149,15 +150,46 @@ Project for\\[1cm]
 		of quantum key distribution (QKD) protocols,
 		been proposed back in 1984 \cite{bb84}.
 		It realizes a secure communication of a secret cryptographic key
-		alongside two entities, over an insecure medium/channel
+		alongside two entities, over a potenitally insecure medium/channel
 		by using principles of quantum mechanics.
 		
-		In this simulation, whose code is listed in Listing 1 of Appendix A,
+		In this simulation (code is listed in Listing 1 of Appendix A),
+		two entities entitled Alice and Bob, execute the QDK using the BB84 protocol
+		in order to share a secret key over a potentially non-secure medium. Initially Alice creates
+		a number of qubits (100 in this example) randomly in one of the two possible bases (either 'x' or 'z') and sends them 
+		to Bob. Bob on his side, randomly selects a base per qubit and measures it. In the next step, 
+		they are comparing their used bases over a classical communication channel and 
+		they discard all the bits generated as an outcome from the measured qubits whose bases were not matching.
+		The remaining bits which obtained from matching bases among the two entities are kept and create the shared secret key.
+
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=0.8\textwidth]{bb84/success_rate_terminal.png}
+			\caption{Execution of code of Listing 1 of Appendix A.}
+			\label{fig:}
+		\end{figure}		
+
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=0.4\textwidth]{bb84/basis_matching.png}
+			\caption{Bases matched on the example where 100 qubits used.}
+			\label{fig:}
+		\end{figure}		
 
 
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=0.5\textwidth]{bb84/success_rate_vs_num_qubits.png}
+			\caption{Success rate vs number of qubits used.}
+			\label{fig:}
+		\end{figure}		
+	
 
+		As we can observe in Figure 3.3, the relation of success rate is plotted against the utilized 
+		number of qubits in the protocol. The simulation was run for up to 10000 qubits. 
+		Success rate is converging to value 0.5, as the probability 
+		of Alice and Bob choosing the same base ('x' or 'z') is 50\%.
 
-	\chapter{Results}
 	\chapter{Discussion}
 
 	\chapter{Conclusion}
@@ -238,15 +270,6 @@ plt.xlabel('Number of Qubits')
 plt.ylabel('Success Rate')
 plt.grid(True)
 plt.savefig("Success Rate vs Number of Qubits.png")
-'''Visualization 3: Key Distribution (Histogram) '''
-key_bits = [bob_results[i] for i in range(num_qubits) if matching_bases[i]]
-plt.figure(figsize=(8, 6))
-plt.hist(key_bits, bins=2, color='purple', edgecolor='black', rwidth=0.85)
-plt.title('Distribution of Key Bits')
-plt.xlabel('Key Bit')
-plt.ylabel('Frequency')
-plt.xticks([0, 1])
-plt.savefig("Distribution of Key Bits.png")	
 
 \end{lstlisting}
 \end{document}
