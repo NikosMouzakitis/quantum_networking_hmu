@@ -97,11 +97,13 @@ Project for\\[1cm]
 		which are very sensitive on environmental noise and decoherence especially over long distances.
 		As a countermeassure, in order to avoid these limitations the development of reliable quantum repeaters
 		and advanced error-correction schemes are required. 
-
+		
+% MORE
 		Additionally, the efficient generation, distribution and storage of entanglement 
 		across a network pose critical hurdles, as maintaining high fidelity in entangled
 		states is necessary for the network's functionality.
-%3	        
+
+%3 MORE 
 		Another key challenge lies in integrating
 	        quantum systems with classical infrastructure,
 	        which requires seamless coordination between
@@ -113,15 +115,122 @@ Project for\\[1cm]
 		related to the number of qubits that comprise it;
 		where a qubit is the quantum counterpart of the classical bit and is the building block of a quantum computers.
 
+
 		In this project the current state of quantum networking is explored alongside its potential applications. 
-		The introduction provides a broad overview of the field, emphasizing its importance in secure communication and distributed computing. 
+		The introduction provides a broad overview of the field, emphasizing its importance in secure communication and presents a brief
+		description of the most common terminology of quantum networking.	
 		In the related work section recent advancements in quantum networking are presented, with a focusing on technologies such as 
 		quantum key distribution, entanglement distribution, and quantum repeaters. 
-		In the methodology section, a simulation-based approach utilizing QuTiP showcases examples to study the key elements of quantum networking. 
-		The results section presents findings from the simulations, 
-		highlighting performance metrics such as communication fidelity and error rates under varying network conditions. 
-		The discussion section interprets these findings in the context of existing literature, identifying both strengths and limitations of current technologies. 
+		In the combined methodology and results section, a simulation-based approach utilizing QuTiP 
+		showcases examples to study the key elements of quantum networking, presenting the findings from the simulations.
+		The discussion section interprets these findings in the context of existing literature, 
+		identifying both strengths and limitations of current technologies. 
 		In the end, the conclusion section summarizes the project's work.
+
+
+		\section{A brief description of the most common terms in quantum networking}
+
+		A \textbf{quantum network} consists of a set of quantum processors/devices connected to each other. \textbf{Qubits} can be particles such as photons
+		or electrons, carrying certain properties derived from quantum mechanics called \textit{state}. A state's can express the spin of an electron or
+		a photon's polarization. The particular state of a qubit is unknown prior to its measurement, since it is in a 
+		superposition (\textit{as an analogy one can think the linear combination of two variables)} of states.
+		After its measurement the qubit collapses in one state, which actually can not be determined
+		before since it is related with the basis that is used in the measurement.
+		
+		\textbf{Quantum superposition} consists one of the ground principles in quantum mechanics. 
+		It presents the property that quantum system has, of existing in multiple states at the same time, until it gets measured. 
+		Superposition denotes that prior to measurement, the system does not exist in any state but in a combination of both states.
+		States in quantum mechanics are denoted as $|\psi\rangle$ and represent a vector in a complex Hilbert space. 
+		A system in superposition is described as a linear combination of basis states:
+			\[
+			|\psi\rangle = a_0 |0\rangle + a_1 |1\rangle,
+			\]
+		where:
+		\begin{itemize}
+			\item $|0\rangle$ and $|1\rangle$ are the basis states, and
+			\item $a_0$ ,$a_1$ belong to complex numbers and satisfy the following equation:
+			\[
+			|a_0|^2 + |a_1|^2 = 1.
+			\]
+		\end{itemize}
+
+		Coefficient $|a_0|^2$ represent the probability of measuring the system state as $|0\rangle$ and $|a_1|^2$ the probability to measure it
+		as $|1\rangle$. After describing its properties, we can understand why superposition constitutes a 
+		basic difference in between quantum and classical mechanics. 
+
+		\textbf{Quantum entanglement} is the situation where two qubits become correlated in a way that
+		any modification on the state of the first at once affect the state, and is reflected on the second qubit, 
+		without any consideration of their actual distance. Because of the no-cloning theorem, there it is not even
+		possible for a third qubit to be entangled with either of those qubits.
+		
+		The \textbf{no-cloning theorem} is a fundamental principle in quantum mechanics 
+		which states that it is impossible to create an exact copy of an unknown quantum state. 
+		This theorem has important consequences in quantum information theory and especially in
+		quantum cryptography and networking. The theorem therefore guarantees the secure quantum communication 
+		in protocols such as Quantum Key Distribution (QKD) because it is impossible for any eavesdropper who copies
+		quantum states in order to intercept informations to operate unnoticed.
+
+		\section{QKD}
+		Quantum Key Distribution is an approach of sharing and establishing a secret cryptographic key 
+		among two communicating entities\cite{powergrid}.
+		In order to achieve the desired outcome it utilizes both a quantum channel and a classical channel 
+		of communication. The quantum one is used to transmit qubits among the entities while the classical 
+		one operates for establishing the final key and for encrypted data exchanges following the classical 
+		paradigm. QKD is only used for the generation of the initial key.
+
+		\section{Quantum Repeaters}
+		
+		Quantum repeaters are devices which are designed to extend the range of quantum communication networks. They 
+		are required to enable QKD in long distances and for supporting the construction of a future quantum internet.
+		In the classical way of communication, the repeaters are used in order to amplify signals 
+		for avoiding signal loss, but due to the no-cloning theorem which prohibits duplication of quantum states,
+		this is not applicable on quantum communication. So a quantum repeater in constrast, utilizes entanglement distribution 
+		and error correction schemes to achieve the establishment of a quantum connection over long distance.
+
+		The main issues that quantum repeaters address are the following:
+		% fix-continue
+		\textbf{a)} Photon Loss (Attenuation):  tens of kilometers \cite{repeater1}. In fact, quantum repeaters are used for
+
+In fiber-based quantum communication, photons carrying quantum information experience loss as they propagate through the medium. This limits the range of QKD to about 100-200 km without repeaters.
+Quantum repeaters overcome this by segmenting the communication channel into shorter links. Entanglement is created and stored in each segment, and through entanglement swapping, the links are extended to form a long-distance connection.
+Decoherence:
+
+Quantum states are highly sensitive to environmental noise, which can cause them to lose coherence. This degrades the fidelity of the transmitted quantum information.
+Quantum repeaters use quantum memories to store entangled states temporarily, allowing error correction or entanglement purification to maintain the quality of the entanglement.
+Scalability of Quantum Networks:
+
+Without repeaters, quantum networks would be limited to small, localized regions due to the constraints of photon transmission.
+Quantum repeaters enable the scalable construction of quantum networks by bridging long distances and connecting multiple network nodes.
+Error Accumulation:
+
+Errors accumulate over long distances in quantum communication systems. Classical error correction cannot be directly applied to quantum states.
+Quantum repeaters incorporate error correction protocols such as entanglement purification to address this issue.
+How Quantum Repeaters Work
+
+Segmented Links:
+
+The total communication distance is divided into smaller segments where entanglement is established.
+Entanglement Generation:
+
+Pairs of entangled photons are created and distributed between nodes in adjacent segments.
+Entanglement Swapping:
+
+Entanglement is extended across multiple segments by performing a Bell state measurement at intermediate nodes.
+Quantum Memory:
+
+Nodes in the network store entangled states temporarily using quantum memories, allowing time for the rest of the network to synchronize.
+Entanglement Purification:
+
+Imperfections in the entanglement are corrected by combining multiple imperfect pairs to produce fewer high-quality pairs.
+Applications of Quantum Repeaters
+
+Secure Long-Distance Communication: Quantum repeaters are critical for enabling QKD over continental and intercontinental distances, ensuring unbreakable encryption.
+
+Quantum Internet: They play a foundational role in connecting quantum processors and sensors across vast networks, enabling distributed quantum computing and sensing.
+
+Advanced Scientific Experiments: Long-distance entanglement enabled by quantum repeaters can support experiments testing the foundations of quantum mechanics over unprecedented scales.
+
+Quantum repeaters are thus the cornerstone of overcoming the practical challenges of long-distance quantum communication, paving the way for robust and scalable quantum networks.
 
 	\chapter{Related Work}
 		In recent years, quantum networking has gained
@@ -132,7 +241,31 @@ Project for\\[1cm]
 		In their work the key advancements and challenges in the
 		development of quantum networks have been discussed while in addition
 		explored the integration of the quantum key distribution (QKD)
-		and a broader vision for the quantum internet.
+		and presented a broader vision for the quantum internet.
+		
+		Van Meter et al. \cite{quantum-arch} proposed a complete architecture for a scalable unified quantum communications.
+		They utilize a two-pass connection setup and recursive protocol to allow scalability and extensibility for future internetworking
+		of many quantum devices. Authors also presented protocols-algorithms for connection establishments,desicion making, routing and 
+		allocation of resources inside the quantum network and its consisting layers.
+		Cacciapuoti et al. \cite{net-chall-dqc} also explored the concept of quantum internet. In their work the key differences among quantum and classical
+		networks ar underlined, and point out quantum teleportation as the most fundamental method of transporting 
+		informations in a quantum system. Authors proposed a framework for tackling the challenges of a quantum
+		network creation as well as emphasizing on the need to address problems like decoherence for enchancing the
+		reliability these networks. 
+		%Repeaters
+		In contrast to traditional quantum repeaters who require the use of entaglement swapping and quantum memory, all-photonic quantum repeaters
+		are based on light particles(photons) for the transfer of quantum information.Authors in \cite{repeater1} propose an all photonic quantum repeater 
+		based on RGS (repeater graph states) achieving a higher repetition rate compared to traditional quantum repeaters, and does not require 
+		the use of quantum memories. Their proposed scheme offers a fast Bell pair generation ration with only limitation the time required for the creation 
+		of the repeater graph state. 
+
+		%other appliances-powergrid to cite.
+		There ...  \cite{powergrid}
+
+
+
+
+
 
 
 	\chapter{Methodology and Results}
@@ -171,7 +304,7 @@ Project for\\[1cm]
 
 		\begin{figure}[h!]
 			\centering
-			\includegraphics[width=0.4\textwidth]{bb84/basis_matching.png}
+			\includegraphics[width=0.6\textwidth]{bb84/basis_matching.png}
 			\caption{Bases matched on the example where 100 qubits used.}
 			\label{fig:}
 		\end{figure}		
@@ -179,7 +312,7 @@ Project for\\[1cm]
 
 		\begin{figure}[h!]
 			\centering
-			\includegraphics[width=0.5\textwidth]{bb84/success_rate_vs_num_qubits.png}
+			\includegraphics[width=0.6\textwidth]{bb84/success_rate_vs_num_qubits.png}
 			\caption{Success rate vs number of qubits used.}
 			\label{fig:}
 		\end{figure}		
@@ -198,9 +331,10 @@ Project for\\[1cm]
 
 \bibliographystyle{plain}
 \bibliography{references}
+\newpage
 \appendix
 
-\section*{Appendix A: BB84 Quantum Key Distribution Simulation Code}
+\section*{Appendix A: Simulation Code }
 
 %\begin{lstlisting}[language=Python, caption=BB84 for QKD, label=code:QKD, escapeinside=||]
 \begin{lstlisting}[language=Python, caption=BB84 for QKD, label=code:QKD]
