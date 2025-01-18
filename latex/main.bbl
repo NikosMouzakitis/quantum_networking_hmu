@@ -16,11 +16,13 @@ Benchasattabuse, N., Hajdušek, M. and Meter, R. V. "Protocols for All-Photonic 
 \bibitem{net-chall-dqc}
 	Cacciapuoti, A. S., Caleffi, M., Tafuri, F., Cataliotti, F. S., Gherardini, S. and Bianchi, G. "Quantum Internet: Networking Challenges in Distributed Quantum Computing," in \textit{IEEE Network}, vol. 34, no. 1, pp. 137-143, January/February 2020
 
+\bibitem{pompilli}
+Pompili, M., Delle Donne, C., te Raa, I., van der Vecht, B., Skrzypczyk, M., Ferreira, G., de Kluijver, L., Stolk, A. J., Hermans, S. L. N., Pawełczak, P., Kozlowski, W., Hanson, R., \& Wehner, S. (2022). Experimental demonstration of entanglement delivery using a quantum network stack. \textit{npj Quantum Information}, \textit{8}(1), 121.
+
+
 \bibitem{entagl-classic}
 	Cacciapuoti, A. S., Caleffi, M., Van Meter, R. and Hanzo, L. "When Entanglement Meets Classical Communications: Quantum Teleportation for the Quantum Internet" in \textit{IEEE Transactions on Communications}, vol. 68, no. 6, pp. 3808-3833, June 2020.
 
-\bibitem{qutip}
-	Johansson, J. R., Nation, P. D. and Nori, F. \textit{“QuTiP 2: A Python framework for the dynamics of open quantum systems”, Comp. Phys. Comm. 184}, 1234 (2013).
 
 \bibitem{rfc}
 Kozlowski, W., Wehner, S., Van Meter, R., Rijsman, B., Cacciapuoti, A. S., Caleffi, M., \& Nagayama, S. (2023). \textit{RFC 9340: Architectural Principles for a Quantum Internet}. RFC Editor. USA.
@@ -32,11 +34,24 @@ Zhou, Y., Tang, Z., Nikmehr, N., Babahajiani, P., Feng, F., Wei, T. C., Zheng, H
 \bibitem{memories}
 Bhaskar, M.K., Riedinger, R., Machielse, B., Levonian, D. S., Nguyen, C. T., Knall, E. N., Park, H., Englund, D., Lončar, M., Sukachev, D. D.i and Lukin, M. D. "Experimental demonstration of memory-enhanced quantum communication" in \textit{Nature}, 580, pp 60–64 (2020).
 
+\bibitem{depolar2}
+Urbanek, M., Nachman, B., Pascuzzi, V. R., He, A., Bauer, C. W., and de Jong, W. A.,
+"Mitigating Depolarizing Noise on Quantum Computers with Noise-Estimation Circuits,"
+\textit{Phys. Rev. Lett.}, vol. 127, no. 27, p. 270502, Dec. 2021.
+
+
+
 \bibitem{bb84}
 	Bennett, C. H and Brassard, G. "Quantum cryptography: Public key distribution and coin tossing," in \textit{ Proc. IEEE Int. Conf. Computers, Systems and Signal Processing}, 1984, pp. 175–179.
 
 \bibitem{depolarization}
 	King, C. "The capacity of the quantum depolarizing channel" in \textit{Information Theory, IEEE Transactions} on. 49. pp. 221 - 229 (2003). 
+
+
+
+\bibitem{qutip}
+	Johansson, J. R., Nation, P. D. and Nori, F. \textit{“QuTiP 2: A Python framework for the dynamics of open quantum systems”, Comp. Phys. Comm. 184}, 1234 (2013).
+
 
 \end{thebibliography}
 

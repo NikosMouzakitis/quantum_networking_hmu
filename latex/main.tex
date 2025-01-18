@@ -161,12 +161,14 @@ Project for\\[1cm]
 		as $|1\rangle$. After describing its properties, we can understand why superposition constitutes a 
 		basic difference in between quantum and classical mechanics. 
 
-		\textbf{Quantum entanglement} is the situation where two qubits become correlated (called \textit{entanglement pair}) in a way that
+		\textbf{Quantum entanglement} is the situation where two qubits become correlated
+		(called \textit{entanglement pair}) in a way that
 		any modification on the state of the first at once affect the state, and is reflected on the second qubit, 
 		without any consideration of their actual distance. Because of the no-cloning theorem, there it is not even
 		possible for a third qubit to be entangled with either of those qubits. Close tied to entanglement, the concept
 		of \textbf{quantum teleportation} is a process, in which state information of a quantum particle can be transferred
-		from one location into another without that particle beeing trasported. This incident is feasible due to the entanglement.
+		from one location into another without that particle beeing trasported.
+		This incident is feasible due to the entanglement.
 		
 		Another important property is the \textbf{fidelity} of a quantum state.
 		Fidelity is a metric  \( \textit{f} \in [0,1] \), denoting the quality of a quantum state.
@@ -286,6 +288,16 @@ Project for\\[1cm]
 		As per quantum memories, in their work Bhaskar et al. \cite{memories}, demonstrated a quantum memory node, which
 		was integrated into a nanophotonic resonator. Their memory node, was able to perform asynchronous Bell-state measurements
 		and proved that their setup is outperforming direct methods of transmission.
+		
+
+		In another step towards the realization of a complete quantum network architecture,
+		researchers have implemented complete protocol stacks for quantum networks.
+		Pompili et al. \cite{pompilli} have experimented with entanglement delivery across 
+		a network's protocol stack and proposed a division of it, in order to provide 
+		independency between the physical implementation and the uppermost layers. 
+		In this way the protocol stack is splitted into Physical and Platform-Independent
+		(Hardware abstraction layer, Link layer, Network layer, Application layer).
+
 
 		%other appliances-powergrid to cite.
 		There ...  \cite{powergrid}
@@ -356,7 +368,47 @@ Project for\\[1cm]
 		
 		In this simulation (code is in Listing 2 of Appendix A), a model of a quantum repeater network with
 		entanglement swapping is created in order to observe how the fidelity of the final entangled state is
-		affected by depolarizing noise \cite{depolarization}. Fidelity calculates how close the state is to the desired state. 
+		affected by depolarizing noise \cite{depolarization}. Depolarizing noise is a quantum noise which models the
+		coherence loss in quantum system's states because of imperfections in quantum operations.
+		
+		The depolarizing noise on a quantum state can be expressed as \cite{depolar2}:
+			\[
+			\rho \to (1-p)\rho + \frac{p}{d}I
+			\]
+
+		where:
+
+		\begin{itemize}
+			    \item \( \rho \): density matrix of quantum state before the noise is applied.
+			    \item \( p \): depolarizing probability,  value \(\in [0, 1]\).
+			    \item \( d \): Hilbert's space dimension. For a single qubit, \( d = 2 \).
+			    \item \( I \): identity matrix \( d \times d \).
+		\end{itemize}
+
+		This form to model the noise is used in the presented simulation code.
+	
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=0.7\textwidth]{repeater/entanglement_swap.png}
+			\caption{Set up for the entanglement swapping}
+			\label{fig:}
+		\end{figure}		
+
+		In the set up of Figure 3.4 we can inspect that qubits q1 (node A) and q2 (node B) are
+		entangled in Bell1(Bell state 1) and q4 (node C) and q3 (node B) are entangled in Bell2(Bell state 2).
+		Node A and Node C, could create these entangled pairs and sent 1 qubit each into the intermediate
+		Node B. The BSM(measurement) occurs in Node B, and as a consequence the initial entanglement between
+		q3 and q4 qubits is destructed \cite{rfc}. Nevertheless the state of q2 is "recreated"/reappears in the possition
+		of qubit q4, which makes an new entanglement pair consisting of qubits (q1,q4).
+
+		Depending on the application requirements, the results of the BSM might be communicated to the Node C, in order
+		to apply a correction operation on q4 depending on which Bell state was received. More specifically, the measurement
+		collapses the quantum states of q2 and q3, but it also results in a change in the state of q1 and q4.
+		Qubits q1 (Node A) and q4 (Node C) become entangled as a result of the BSM, but they are not measured themselves.
+		This is known as the process of entanglement swapping. Now (q1,q4) share an entangled state, even though they 
+		were not directly entangled initially.
+
+		Fidelity calculates how close the state is to the desired state. 
 		As the noise in the system increases, the fidelity of the final state decreases,
 		indicating the decrease in quantum entanglement quality.
 
@@ -369,8 +421,8 @@ Project for\\[1cm]
 
 		A value of 1 indicates the maximum perfect fidelity where there is no loss of entanglement, 
 		while lower values indicate a degradation due to noise.
-		In practise values less than 0.5 indicates that the state is unsuitable for further quantum processing.
-		In Figure 3.4 we can inspect that as the noise level increases, the fidelity decreases,
+		In practice a fidelity value less than 0.5 indicates that the state is unsuitable for further quantum processing.
+		In Figure 3.5 we can inspect that as the noise level increases, the fidelity decreases,
 		an expected behavior since noise disrupts the quantum states,
 		making the final entangled state less similar to the ideal state.
 
@@ -460,4 +512,96 @@ plt.grid(True)
 plt.savefig("Success Rate vs Number of Qubits.png")
 
 \end{lstlisting}
+
+
+\begin{lstlisting}[language=Python, caption=Entanglement swapping(fidelity vs polarizing noise), label=code:QKD]
+
+from qutip import *
+import numpy as np
+import matplotlib.pyplot as plt
+
+''' Define Bell state '''
+def create_bell_state():
+    zero = basis(2, 0)  
+    one = basis(2, 1)   
+    bell_state = (tensor(zero, zero) + tensor(one, one)).unit()  
+    bell_dm = ket2dm(bell_state)  ''' Convert to density matrix, shape: (4, 4)'''
+    return bell_dm
+
+''' Apply noise to a quantum state (Depolarizing channel)'''
+def apply_depolarizing_noise(state, p):
+    dim = np.prod(state.dims[0])  ''' Total dimension of the system'''
+    identity = qeye(dim)  ''' Identity operator, shape: (dim, dim)'''
+    identity.dims = state.dims
+    n1=(1-p)*state
+    n2 = (p/dim)*identity
+    noisy_state = (1 - p) * state + (p / dim) * identity
+    return noisy_state
+
+''' Entanglement swapping '''
+def entanglement_swapping(bell1, bell2):
+    """
+    Perform entanglement swapping between two Bell states:
+    bell1: A-B (shape: (4, 4)), bell2: B-C (shape: (4, 4))
+    Returns:
+    - swapped_state: final entangled state between A and C (shape: (4, 4))
+    """
+    # Bell measurement on qubits 2 and 3 (middle qubits)
+    bell_meas = (tensor(basis(2, 0), basis(2, 0)).proj() + 
+                 tensor(basis(2, 1), basis(2, 1)).proj())  # Bell basis, shape: (4, 4)
+    projection = tensor(qeye(2), bell_meas, qeye(2))  # Operate on qubits 2 and 3, shape: (16, 16)
+    
+    # Combine the two input states into a joint density matrix
+    joint_state = tensor(bell1, bell2)  # Combined state, shape: (16, 16)
+    
+    # Apply projection for entanglement swapping
+    swapped_state = (projection * joint_state * projection.dag()).unit()  # Shape: (16, 16)
+    
+    # Partial trace over qubits 2 and 3 to get A-C state
+    final_state = swapped_state.ptrace([0, 3])  # Shape: (4, 4)
+    return final_state
+
+# Network Simulation
+def simulate_network():
+    """
+    Simulates a basic quantum repeater network with entanglement swapping.
+    Returns:
+    - fidelity_value: fidelity of the final entangled state with an ideal Bell state
+    """
+    noise_levels = np.linspace(0, 1, 20)  # Noise levels from 0 to 1
+    fidelities = []
+
+
+    ''' Step 1: Create initial entanglement between nodes'''
+    bell1 = create_bell_state()  # Between nodes A and B
+    print(bell1)
+
+    bell2 = create_bell_state()  # Between nodes B and C
+    print(bell2)
+    
+    ''' Step 2: Calculate fidelity for different noise levels '''
+    for p in noise_levels:
+        bell1_noisy = apply_depolarizing_noise(bell1, p)
+        bell2_noisy = apply_depolarizing_noise(bell2, p)
+        final_state = entanglement_swapping(bell1_noisy, bell2_noisy)
+        ideal_bell = create_bell_state()
+        print(ideal_bell)
+        fidelity_value = fidelity(final_state, ideal_bell)
+        fidelities.append(fidelity_value)
+    
+    ''' Step 3: Plot fidelity vs noise level'''
+    plt.plot(noise_levels, fidelities)
+    plt.xlabel("Noise Level (p)")
+    plt.ylabel("Fidelity")
+    plt.title("Fidelity vs. Noise Level in Entanglement Swapping")
+    plt.grid(True)
+    plt.savefig("Fidelity vs Noise Level in Entanglement Swapping.png")   
+
+# Main Execution
+if __name__ == "__main__":
+    simulate_network()
+
+
+\end{lstlisting}
+
 \end{document}

@@ -77,6 +77,7 @@ def simulate_network():
         ideal_bell = create_bell_state()
         print(ideal_bell)
         fidelity_value = fidelity(final_state, ideal_bell)
+        print(fidelity_value)
         fidelities.append(fidelity_value)
     
     # Step 3: Plot fidelity vs noise level
