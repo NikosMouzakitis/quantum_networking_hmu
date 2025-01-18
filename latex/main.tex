@@ -76,7 +76,10 @@ Project for\\[1cm]
 		an increasing trend, quantum networking is considered as a robust solution
 		for protecting sensitive informations.
 		Moreover, it is possible that mixed architectures combining classical and quantum network elements
-		could provide a feasible solution for the future communication systems.
+		could provide a feasible solution for the future communication systems. 
+		To define the structure and complete functionality of the future quantum internet,
+		a complete network stack is required to be created starting from the beginning utilizing 
+		the features of quantum entanglement\cite{rfc}.
 
 			              %#############################################
 		Challenges arise although; despite the promising potential in quantum networking,
@@ -158,11 +161,19 @@ Project for\\[1cm]
 		as $|1\rangle$. After describing its properties, we can understand why superposition constitutes a 
 		basic difference in between quantum and classical mechanics. 
 
-		\textbf{Quantum entanglement} is the situation where two qubits become correlated in a way that
+		\textbf{Quantum entanglement} is the situation where two qubits become correlated (called \textit{entanglement pair}) in a way that
 		any modification on the state of the first at once affect the state, and is reflected on the second qubit, 
 		without any consideration of their actual distance. Because of the no-cloning theorem, there it is not even
-		possible for a third qubit to be entangled with either of those qubits.
+		possible for a third qubit to be entangled with either of those qubits. Close tied to entanglement, the concept
+		of \textbf{quantum teleportation} is a process, in which state information of a quantum particle can be transferred
+		from one location into another without that particle beeing trasported. This incident is feasible due to the entanglement.
 		
+		Another important property is the \textbf{fidelity} of a quantum state.
+		Fidelity is a metric  \( \textit{f} \in [0,1] \), denoting the quality of a quantum state.
+		The higher the value is, the closer the quantum state is to what it was created to be.
+		Fidelity represents this probability, allowing the evaluation of how much environmental noise
+		and losses have impacted the quantum state.
+
 		The \textbf{no-cloning theorem} is a fundamental principle in quantum mechanics 
 		which states that it is impossible to create an exact copy of an unknown quantum state. 
 		This theorem has important consequences in quantum information theory and especially in
@@ -186,53 +197,57 @@ Project for\\[1cm]
 		for avoiding signal loss, but due to the no-cloning theorem which prohibits duplication of quantum states,
 		this is not applicable on quantum communication. So a quantum repeater in constrast, utilizes entanglement distribution 
 		and error correction schemes to achieve the establishment of a quantum connection over long distance.
-
 		The main issues that quantum repeaters address are the following:
-		% fix-continue
-		\textbf{a)} Photon Loss (Attenuation):  tens of kilometers \cite{repeater1}. In fact, quantum repeaters are used for
 
-In fiber-based quantum communication, photons carrying quantum information experience loss as they propagate through the medium. This limits the range of QKD to about 100-200 km without repeaters.
-Quantum repeaters overcome this by segmenting the communication channel into shorter links. Entanglement is created and stored in each segment, and through entanglement swapping, the links are extended to form a long-distance connection.
-Decoherence:
+		\textbf{a)} Photon Loss (Attenuation):
+		In fact, quantum repeaters can help to tackle the loss in fiber-based quantum communication,
+		where the photons who carry quantum information experience loss inside the medium by propagation. 
+		This limits the range of QKD to about tens of kilometers \cite{repeater1}. 
+		By using them, and creating shorter segments with the interference of quantum repeaters in the medium,
+		entanglement pairs can be created and saved for each segment, 
+		and by using the technique of entanglement swapping, information can 'pass' through and realize a long distance connection.
 
-Quantum states are highly sensitive to environmental noise, which can cause them to lose coherence. This degrades the fidelity of the transmitted quantum information.
-Quantum repeaters use quantum memories to store entangled states temporarily, allowing error correction or entanglement purification to maintain the quality of the entanglement.
-Scalability of Quantum Networks:
+		\textbf{b)} Decoherence:
+		Quantum states are very sensitive and affected by environmental noise, forcing the states to lose coherence (\textit{preservation of quantum
+		state over time and long distances}).
+		Quantum repeaters use quantum memories\cite{memories} as intermediate nodes to store entangled states 
+		temporarily, allowing processes such as error correction or entanglement purification to maintain 
+		the quality of the entanglement.
+		
+		\textbf{c)} Scalability of Quantum Networks:
+		Without using repeaters, quantum networks have to be limited small local areas due to the
+		constraints of photon transmission.
+		Quantum repeaters can enable a scalable construction 
+		of larger quantum networks by bridging long distances using segmented 
+		paths with entangled pairs connecting multiple nodes.
+		
+		\textbf{d)} Error Accumulation:
+		In quantum communications, errors tend to accumulate over long distances
+		and the classical error correction schemes are not applicable for the quantum states.
+		Quantum repeaters integrate error correction protocols like entanglement purification
+		in order to tackle this issue.
 
-Without repeaters, quantum networks would be limited to small, localized regions due to the constraints of photon transmission.
-Quantum repeaters enable the scalable construction of quantum networks by bridging long distances and connecting multiple network nodes.
-Error Accumulation:
+		\section{Bell state measurement}
 
-Errors accumulate over long distances in quantum communication systems. Classical error correction cannot be directly applied to quantum states.
-Quantum repeaters incorporate error correction protocols such as entanglement purification to address this issue.
-How Quantum Repeaters Work
+		A Bell State Measurement (BSM) is a quantum operation designed to determine
+		the entangled state of two qubits. The set of Bell states consists of four 
+		maximally entangled quantum states representing the strongest correlations
+		among two qubits. These states are:
 
-Segmented Links:
+			\begin{align*}
+			    \Phi^+ &= \frac{1}{\sqrt{2}} (|00\rangle + |11\rangle), \\
+			    \Phi^- &= \frac{1}{\sqrt{2}} (|00\rangle - |11\rangle), \\
+			    \Psi^+ &= \frac{1}{\sqrt{2}} (|01\rangle + |10\rangle), \\
+			    \Psi^- &= \frac{1}{\sqrt{2}} (|01\rangle - |10\rangle).
+			\end{align*}
 
-The total communication distance is divided into smaller segments where entanglement is established.
-Entanglement Generation:
+		In a BSM operation, the states of two qubits are projected onto one of these four Bell states. 
+		As an outcome, information occurs about how the two qubits are related, but not information
+		about their respective individual states. Their ability to manage and process entanglement
+		in quantum networks establishes BSMs to be a critical element on the future quantum architectures.
 
-Pairs of entangled photons are created and distributed between nodes in adjacent segments.
-Entanglement Swapping:
 
-Entanglement is extended across multiple segments by performing a Bell state measurement at intermediate nodes.
-Quantum Memory:
-
-Nodes in the network store entangled states temporarily using quantum memories, allowing time for the rest of the network to synchronize.
-Entanglement Purification:
-
-Imperfections in the entanglement are corrected by combining multiple imperfect pairs to produce fewer high-quality pairs.
-Applications of Quantum Repeaters
-
-Secure Long-Distance Communication: Quantum repeaters are critical for enabling QKD over continental and intercontinental distances, ensuring unbreakable encryption.
-
-Quantum Internet: They play a foundational role in connecting quantum processors and sensors across vast networks, enabling distributed quantum computing and sensing.
-
-Advanced Scientific Experiments: Long-distance entanglement enabled by quantum repeaters can support experiments testing the foundations of quantum mechanics over unprecedented scales.
-
-Quantum repeaters are thus the cornerstone of overcoming the practical challenges of long-distance quantum communication, paving the way for robust and scalable quantum networks.
-
-	\chapter{Related Work}
+\chapter{Related Work}
 		In recent years, quantum networking has gained
 		significant attention due to its potential to ignite a revolution in
 		secure communications and distributed computing.
@@ -243,21 +258,34 @@ Quantum repeaters are thus the cornerstone of overcoming the practical challenge
 		explored the integration of the quantum key distribution (QKD)
 		and presented a broader vision for the quantum internet.
 		
-		Van Meter et al. \cite{quantum-arch} proposed a complete architecture for a scalable unified quantum communications.
-		They utilize a two-pass connection setup and recursive protocol to allow scalability and extensibility for future internetworking
-		of many quantum devices. Authors also presented protocols-algorithms for connection establishments,desicion making, routing and 
+		Kozlowski et al. \cite{rfc} focus on presenting the architectural foundations required in order to
+		realize the quantum internet, strongly proposing the incorporation of quantum entanglement and Bell pairs for quantum networks. 
+		The different aspects among quantum and classical networks are discussed, while authors point out the use of hybrid
+		classical-quantum architectures. Van Meter et al. \cite{quantum-arch} proposed a complete architecture 
+		for a scalable unified quantum communications. They utilize a two-pass connection setup and recursive protocol
+		to allow scalability and extensibility for future internetworking
+		of many quantum devices. Authors also presented protocols-algorithms for connection establishments, desicion making, routing and 
 		allocation of resources inside the quantum network and its consisting layers.
-		Cacciapuoti et al. \cite{net-chall-dqc} also explored the concept of quantum internet. In their work the key differences among quantum and classical
+		Quantum internet concept is also been explored by Cacciapuoti et al. \cite{net-chall-dqc}.
+		In their work the key differences among quantum and classical
 		networks ar underlined, and point out quantum teleportation as the most fundamental method of transporting 
 		informations in a quantum system. Authors proposed a framework for tackling the challenges of a quantum
 		network creation as well as emphasizing on the need to address problems like decoherence for enchancing the
-		reliability these networks. 
+		reliability these networks. The key role of quantum teleportation is also discussed in \cite{entagl-classic},
+		where authors recommend a redesignation of the classic communication paradigm in order to conform with the quantum teleportation needs.
+		They describe the generation and distribution of entanglement by using photons for transmissions, and propose certain schemes for extending
+		the range of communications such as the entanglement swapping.
+
 		%Repeaters
 		In contrast to traditional quantum repeaters who require the use of entaglement swapping and quantum memory, all-photonic quantum repeaters
-		are based on light particles(photons) for the transfer of quantum information.Authors in \cite{repeater1} propose an all photonic quantum repeater 
+		are based on light particles(photons) for the transfer of quantum information.
+		Authors in \cite{repeater1} propose an all photonic quantum repeater 
 		based on RGS (repeater graph states) achieving a higher repetition rate compared to traditional quantum repeaters, and does not require 
-		the use of quantum memories. Their proposed scheme offers a fast Bell pair generation ration with only limitation the time required for the creation 
-		of the repeater graph state. 
+		the use of quantum memories. Their proposed scheme offers a fast Bell pair generation ration with only
+		limitation the time required for the creation of the repeater graph state. 
+		As per quantum memories, in their work Bhaskar et al. \cite{memories}, demonstrated a quantum memory node, which
+		was integrated into a nanophotonic resonator. Their memory node, was able to perform asynchronous Bell-state measurements
+		and proved that their setup is outperforming direct methods of transmission.
 
 		%other appliances-powergrid to cite.
 		There ...  \cite{powergrid}
@@ -286,7 +314,7 @@ Quantum repeaters are thus the cornerstone of overcoming the practical challenge
 		alongside two entities, over a potenitally insecure medium/channel
 		by using principles of quantum mechanics.
 		
-		In this simulation (code is listed in Listing 1 of Appendix A),
+		In this simulation (code is in Listing 1 of Appendix A),
 		two entities entitled Alice and Bob, execute the QDK using the BB84 protocol
 		in order to share a secret key over a potentially non-secure medium. Initially Alice creates
 		a number of qubits (100 in this example) randomly in one of the two possible bases (either 'x' or 'z') and sends them 
@@ -294,7 +322,9 @@ Quantum repeaters are thus the cornerstone of overcoming the practical challenge
 		they are comparing their used bases over a classical communication channel and 
 		they discard all the bits generated as an outcome from the measured qubits whose bases were not matching.
 		The remaining bits which obtained from matching bases among the two entities are kept and create the shared secret key.
-
+		It is important to note, that the qubits measurements from the mismatched bases are 
+		discarded, since the outcome of the measurement on a mismatched base is probabilistic,
+		and this does not ensure an identical secret key for both parties.
 		\begin{figure}[h!]
 			\centering
 			\includegraphics[width=0.8\textwidth]{bb84/success_rate_terminal.png}
@@ -316,12 +346,36 @@ Quantum repeaters are thus the cornerstone of overcoming the practical challenge
 			\caption{Success rate vs number of qubits used.}
 			\label{fig:}
 		\end{figure}		
-	
 
 		As we can observe in Figure 3.3, the relation of success rate is plotted against the utilized 
 		number of qubits in the protocol. The simulation was run for up to 10000 qubits. 
 		Success rate is converging to value 0.5, as the probability 
 		of Alice and Bob choosing the same base ('x' or 'z') is 50\%.
+
+		\section{Fidelity against Noise Level}	
+		
+		In this simulation (code is in Listing 2 of Appendix A), a model of a quantum repeater network with
+		entanglement swapping is created in order to observe how the fidelity of the final entangled state is
+		affected by depolarizing noise \cite{depolarization}. Fidelity calculates how close the state is to the desired state. 
+		As the noise in the system increases, the fidelity of the final state decreases,
+		indicating the decrease in quantum entanglement quality.
+
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=0.6\textwidth]{repeater/fid_vs_noise.png}
+			\caption{Fidelity vs Noise Level.}
+			\label{fig:}
+		\end{figure}		
+
+		A value of 1 indicates the maximum perfect fidelity where there is no loss of entanglement, 
+		while lower values indicate a degradation due to noise.
+		In practise values less than 0.5 indicates that the state is unsuitable for further quantum processing.
+		In Figure 3.4 we can inspect that as the noise level increases, the fidelity decreases,
+		an expected behavior since noise disrupts the quantum states,
+		making the final entangled state less similar to the ideal state.
+
+
+
 
 	\chapter{Discussion}
 

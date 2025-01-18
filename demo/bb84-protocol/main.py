@@ -79,7 +79,7 @@ plt.xlabel('Number of Qubits')
 plt.ylabel('Success Rate')
 plt.grid(True)
 plt.savefig("Success Rate vs Number of Qubits.png")
-
+'''
 # Visualization 3: Key Distribution (Histogram)
 key_bits = [bob_results[i] for i in range(num_qubits) if matching_bases[i]]
 plt.figure(figsize=(8, 6))
@@ -89,4 +89,4 @@ plt.xlabel('Key Bit')
 plt.ylabel('Frequency')
 plt.xticks([0, 1])
 plt.savefig("Distribution of Key Bits.png")
-
+'''
