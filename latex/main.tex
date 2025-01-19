@@ -237,10 +237,25 @@ Project for\\[1cm]
 		In a BSM operation, the states of two qubits are projected onto one of these four Bell states. 
 		As an outcome, information occurs about how the two qubits are related, but not information
 		about their respective individual states. Their ability to manage and process entanglement
-		in quantum networks establishes BSMs to be a critical element on the future quantum architectures.
-		
-		\section{Network Devices}
-		e-qnet continue
+		in quantum networks establishes BSMs to be a critical element on the future quantum architectures. The main network entities of the quantum networking paradigm\cite{e-qnet} are presented in Table 1.1.
+
+		\begin{table}[h!]
+		\centering
+		\renewcommand{\arraystretch}{1.5}
+			\begin{tabular}{|p{5.5cm}|p{10cm}|}
+			\hline
+			\textbf{Entity} & \textbf{Role} \\ \hline
+			quantum end nodes	&  able to transmit and process qubits for quantum applications		\\ \hline
+			quantum memories	&  enabling reliable storage of qubits for later operation or measurement 		\\ \hline
+			quantum routers		&  routing of entanglement distributions, responsible to choose optimal swapping paths 		\\ \hline
+			quantum repeaters	& extending network by purifying, entanglement swapping and delivering high fidelity entanglement 		\\ \hline
+				EPR\textit{Einstein,Podolsky,Rosen} Sources		&  Generate and manage distribution of entangled qubit pairs among neighbouring nodes for creation of entanglement links. They emit engtangled particles and serve as backbone for transfering quantum data across nodes.		\\ \hline
+			Physical medium		&  Fiber optics or free space channels to enable qubits transmission		\\ \hline
+		\end{tabular}
+		\caption{Network entities of the quantum networking paradigm}
+		\label{tab:example}
+		\end{table}
+
 
 \chapter{Related Work}
 		In recent years, quantum networking has gained
@@ -290,7 +305,11 @@ Project for\\[1cm]
 		independency between the physical implementation and the uppermost layers. 
 		In this way the protocol stack is splitted into Physical and Platform-Independent
 		(Hardware abstraction layer, Link layer, Network layer, Application layer).
-
+		
+		A thouroughly presentation of the quantum network architecture is given by Khan et al. \cite{e-qnet}
+		where they have studied the quantum protocol stack, and underlined the functionalities of its layers, as well 
+		as its components. In their work authors proposed E-QNET, a prototype for  created to be utilizing a layered quantum networking
+		framework.
 		
 		%other appliances-powergrid to cite.
 		There ...  \cite{powergrid}
