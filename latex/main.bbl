@@ -22,6 +22,15 @@ Pompili, M., Delle Donne, C., te Raa, I., van der Vecht, B., Skrzypczyk, M., Fer
 \bibitem{e-qnet}
 	Khan, M. A., Aman, M. N. and Sikdar, B. "Architecting the Quantum Future: Key Devices and Layers in Quantum Network Design" in \textit{2024 IEEE Physical Assurance and Inspection of Electronics (PAINE)}, pp. 1-7
 
+\bibitem{dur-multipartite}
+Walln{\"o}fer, J., Pirker, A., Zwerger, M. and D{\"u}r, W. "Multipartite state generation in quantum networks with optimal scaling", in \textit{Scientific Reports}, vol. 9, no. 1, article 314, Jan. 2019.
+
+\bibitem{li-arch}
+Li, Z., Xue, K., Li, J., Yu, N., Liu, J., Wei, L., Sun, Q. and Lu, J. "Building a large-scale and wide-area quantum Internet based on an OSI-alike model", in \textit{China Communications}, vol. 18, no. 10, pp. 1--14, Oct. 2021. 
+
+\bibitem{wehner-arch}
+	Kozlowski, W., Dahlberg, A. and Wehner, S. "Designing a quantum network protocol", in \textit{Proceedings of the 16th International Conference on emerging Networking EXperiments and Technologies (CoNEXT 2020)}, Association for Computing Machinery, New York, NY, USA, 1–16.
+
 \bibitem{entagl-classic}
 	Cacciapuoti, A. S., Caleffi, M., Van Meter, R. and Hanzo, L. "When Entanglement Meets Classical Communications: Quantum Teleportation for the Quantum Internet" in \textit{IEEE Transactions on Communications}, vol. 68, no. 6, pp. 3808-3833, June 2020.
 

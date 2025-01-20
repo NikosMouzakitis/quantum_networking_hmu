@@ -237,7 +237,35 @@ Project for\\[1cm]
 		In a BSM operation, the states of two qubits are projected onto one of these four Bell states. 
 		As an outcome, information occurs about how the two qubits are related, but not information
 		about their respective individual states. Their ability to manage and process entanglement
-		in quantum networks establishes BSMs to be a critical element on the future quantum architectures. The main network entities of the quantum networking paradigm\cite{e-qnet} are presented in Table 1.1.
+		in quantum networks establishes BSMs to be a critical element on the future quantum architectures. 
+
+
+		\section{Proposed Quantum OSI-like Models}
+		
+		Quantum Internet(QI) architecture research has been studied and lead into several OSI-like protocol 
+		stack models, where the common aspect of all has been the exploitation of
+		quantum entanglement. Entanglement have been considered to be the key part for communication. 
+		These models, such as proposed by Van Meter et al.\cite{quantum-arch}, 
+		Wehner et al.\cite{wehner-arch}, Li et al. \cite{li-arch}, and Dür et al.\cite{dur-multipartite}, 
+		consider the entanglement generation and management-distribution through various methods.
+		One basic categorization of these models is that Dür's model utilizes a multipartitie entanglement fashion
+		while the other models follow a bipartite entanglement approach.
+		
+		In Van Meter et al.'s model, authors describe a layered protocol for quantum repeaters network and
+		they implement end to end entanglement distribution and different 'actions' of entanglement per layer.
+		They underlined bipartite entanglement generation using protocols and error purification techniques in between the
+		layers to achieve  high fidelity in order to support the quantum communication.
+		Similarly, in Wehner et al.'s model, the classical Internet layer names are present with the introduction
+		of abstractions that can support hardware heterogeneity and scalable entanglement generation. 
+		Li et al.'s approach extends this, by pre-establishing entangled states that can be consumed on demand, 
+		while customizing link-layer protocols for maintaining high-fidelity connections. 
+		In contrast, the model presented by Dür et al., introduces multipartite entanglement and graph states, 
+		which can support long range entanglement distribution by utilizing dynamic and adaptive network steps. 
+		As we can inspect there is a diversity of ways for the proposed models, having single-pair entanglement, 
+		multi-party sharing of entanglement and advanced graph structures, competing for the model to be used
+		in the quantum Internet network stack.
+
+		As for the main network entities of the quantum networking paradigm\cite{e-qnet} are presented in Table 1.1.
 
 		\begin{table}[h!]
 		\centering
@@ -267,16 +295,34 @@ Project for\\[1cm]
 		development of quantum networks have been discussed while in addition
 		explored the integration of the quantum key distribution (QKD)
 		and presented a broader vision for the quantum internet.
-		
-		Kozlowski et al. \cite{rfc} focus on presenting the architectural foundations required in order to
-		realize the quantum internet, strongly proposing the incorporation of quantum entanglement and Bell pairs for quantum networks. 
-		The different aspects among quantum and classical networks are discussed, while authors point out the use of hybrid
-		classical-quantum architectures. Van Meter et al. \cite{quantum-arch} proposed a complete architecture 
+	
+		Van Meter et al. \cite{quantum-arch} proposed a complete architecture 
 		for a scalable unified quantum communications. They utilize a two-pass connection setup and recursive protocol
 		to allow scalability and extensibility for future internetworking
 		of many quantum devices. Authors also presented protocols-algorithms for connection establishments, desicion making, routing and 
 		allocation of resources inside the quantum network and its consisting layers.
-		Quantum internet concept is also been explored by Cacciapuoti et al. \cite{net-chall-dqc}.
+		In another step towards the realization of a complete quantum network architecture,
+		researchers have implemented complete protocol stacks for quantum networks.
+		Pompili et al. \cite{pompilli} have experimented with entanglement delivery across 
+		a network's protocol stack and proposed a division of it, in order to provide 
+		independency between the physical implementation and the uppermost layers. 
+		In this way the protocol stack is splitted into Physical and Platform-Independent
+		(Hardware abstraction layer, Link layer, Network layer, Application layer).
+		A thouroughly presentation of the quantum network architecture is given by Khan et al. \cite{e-qnet}
+		where they have studied the quantum protocol stack, and underlined the functionalities of its layers, as well 
+		as its components. In their work authors proposed E-QNET, a prototype for  created to be utilizing a layered quantum networking
+		framework.
+
+		In\cite{li-arch}, Li and co-authors proposed a new way of how interconnected
+		quantum nodes can communicate by adopting an OSI-like
+		model concept for QI. Their model intends to reduce the complexity of communications
+		and proposed the QLAN (quantum local area network) as a basic component of the future QI. In their model
+		QLANs are interconnected via intermediate quantum repeaters, and they can also be designed and deployed in
+		a hierarchical fashion.
+		Kozlowski et al. \cite{rfc} focus on presenting the architectural foundations required in order to
+		realize the quantum internet, strongly proposing the incorporation of quantum entanglement and Bell pairs for quantum networks. 
+		The different aspects among quantum and classical networks are discussed, while authors point out the use of hybrid
+		classical-quantum architectures.		Quantum internet concept is also been explored by Cacciapuoti et al. \cite{net-chall-dqc}.
 		In their work the key differences among quantum and classical
 		networks ar underlined, and point out quantum teleportation as the most fundamental method of transporting 
 		informations in a quantum system. Authors proposed a framework for tackling the challenges of a quantum
@@ -297,20 +343,7 @@ Project for\\[1cm]
 		was integrated into a nanophotonic resonator. Their memory node, was able to perform asynchronous Bell-state measurements
 		and proved that their setup is outperforming direct methods of transmission.
 		
-
-		In another step towards the realization of a complete quantum network architecture,
-		researchers have implemented complete protocol stacks for quantum networks.
-		Pompili et al. \cite{pompilli} have experimented with entanglement delivery across 
-		a network's protocol stack and proposed a division of it, in order to provide 
-		independency between the physical implementation and the uppermost layers. 
-		In this way the protocol stack is splitted into Physical and Platform-Independent
-		(Hardware abstraction layer, Link layer, Network layer, Application layer).
-		
-		A thouroughly presentation of the quantum network architecture is given by Khan et al. \cite{e-qnet}
-		where they have studied the quantum protocol stack, and underlined the functionalities of its layers, as well 
-		as its components. In their work authors proposed E-QNET, a prototype for  created to be utilizing a layered quantum networking
-		framework.
-		
+				
 		%other appliances-powergrid to cite.
 		There ...  \cite{powergrid}
 
