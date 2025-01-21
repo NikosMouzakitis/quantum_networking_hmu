@@ -175,12 +175,57 @@ Project for\\[1cm]
 		quantum states in order to intercept informations to operate unnoticed.
 
 		\section{QKD}
-		Quantum Key Distribution is an approach of sharing and establishing a secret cryptographic key 
-		among two communicating entities\cite{powergrid}.
-		In order to achieve the desired outcome it utilizes both a quantum channel and a classical channel 
-		of communication. The quantum one is used to transmit qubits among the entities while the classical 
-		one operates for establishing the final key and for encrypted data exchanges following the classical 
-		paradigm. QKD is only used for the generation of the initial key.
+
+
+		Quantum Key Distribution (QKD) is a revolutionary method for securely exchanging cryptographic keys between two distant parties\cite{powergrid}, 
+		commonly referred to as Alice (the sender) and Bob (the receiver). 
+		It utilizes the principles of quantum mechanics domain in order to ensure the security of the key distribution operation. 
+		QKD's main goal is to enable the two parties to establish a shared, secret cryptographic key, 
+		which can then be used to encrypt and decrypt messages using traditional cryptographical schemes, such as symmetric encryption algorithms.
+
+		One of the main differenes that differentiates QKD from other cryptographic schemes, 
+		is its reliance on two communication channels: 
+		a quantum channel and a classical channel. 
+		The quantum channel is used to transmit quantum bits or qubits, 
+		which are the fundamental units of quantum information. 
+		These qubits are usually encoded as quantum states of particles, for example as photons. 
+		The quantum channel ensures the secure transmission of the qubits because, 
+		according to the no-cloning theorem and 
+		Heisenberg's principle of uncertainty, 
+		any interception or measurement of these quantum states 
+		will unreversibly disturb the system, revealing the presence of a malicious actor(adversary).
+
+		On the other hand, the classical channel is used for the transmission of classic information 
+		that does not relates to quantum information but plays vital role for the key establishment process.
+		When the qubits are exchanged via the quantum channel, Alice and Bob communicate using the classical channel
+		to perform the next steps, such as error correction, privacy amplification, and sifting. 
+		These processes guarantees that noise introduced during the transmission is considered 
+		and that they both agree on a shared key.
+		The classical channel also helps into validating the integrity of the key exchange
+		and for other parameters, such as the measurement bases in some QKD protocols.
+
+		The core components on which QKD is based, are the concepts of quantum entanglement and superposition,
+		which makes possible the secure transfer of information. 
+		For example, in protocols like BB84, the cryptographic key is distributed using quantum states
+		that are in superposition. The critical feature of QKD's protocols is that any attempt of a malicious actor for
+		eavesdropping will modify inreversible the quantum states, an action which is detectable by Alice and Bob sides.
+		This is the main difference of QKD compared with classical cryptographic schemes, which focus on mathematical complexity. 
+
+		QKD protocols like BB84 and E91 also offer \textit{information-theoretic security}. This term has the meaning that even 
+		if an adversary has unlimited computational resources available, they cannot gain any knowledge about the 
+		shared key without being detected. This statement highlights the difference with traditional cryptographic methods, and 
+		someone could argue that QKD its secure by the foundations of the "ingredients" its made of.
+
+		As for the challenges that QKD has to surpass, quantum channels typically have limitations in terms of distance and reliability.
+		As a solution, quantum repeaters and quantum relays have been introduced for extending the range of QKD. 
+		These devices would allow entanglement to be distributed over longer distances, 
+		enabling the construction of a desired quantum internet where secure communication can take place over large scale networks.
+
+		In general, QKD is an core building block of quantum cryptography,
+		providing a secure way for establishing shared secret keys. 
+		By using the principles of quantum mechanics, QKD enables secure communication that is 
+		information-theoretic secure. While it still faces some practical challenges, QKD holds high expectations for the 
+		future of secure communications.
 
 		\section{Quantum Repeaters}
 		
@@ -361,6 +406,11 @@ Project for\\[1cm]
 		demonstration of selected concepts in quantum networking.
 		QuTiP(Quantum Toolbox in Python)\cite{qutip}, an open source framework
 		written in Python, has been used for the simulations.
+		Another platform which allows public access is IBM Quantum Platform\cite{qiskit} which is available for cloud-based quantum computing services. 
+		Users can have access to a subset of IBM's quantum processors to deploy quantum circuits 
+		and other useful resources such as tutorials specified for quantum computing. Quantum processor are also accesible via the
+		IBM Quantum Composer (graphical drag and drop quantum programming tool) where quantum operations for generating quantum circuits 
+		are available.
 
 		\section{BB84 Quantum Key Distribution Protocol}
 
@@ -382,6 +432,7 @@ Project for\\[1cm]
 		It is important to note, that the qubits measurements from the mismatched bases are 
 		discarded, since the outcome of the measurement on a mismatched base is probabilistic,
 		and this does not ensure an identical secret key for both parties.
+
 		\begin{figure}[h!]
 			\centering
 			\includegraphics[width=0.8\textwidth]{bb84/success_rate_terminal.png}
@@ -471,8 +522,47 @@ Project for\\[1cm]
 		an expected behavior since noise disrupts the quantum states,
 		making the final entangled state less similar to the ideal state.
 
+		\section{Entanglement Swapping}
 
+		For an entanglement swapping experiment, the IBM Quantum composer has been utilized for creating a circuit, which later
+		was deployed in one of the available quantum processors. This experiment is actually a "continuation" from the 
+		previous experiment presented in Figure 3.4. Again we start with 4 qubits (q[0], q[1],q[2] and q[3]) and the goal is to entangle
+		q[0] and q[3]. In Figure 3.6 initially we create the entanglements alongside q[0] and q[1] using Hadamard gate in conjunction with
+		a CNOT gate. Then the same procedure applies for qubits q[2] and q[3].
 
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=0.6\textwidth]{ibmq/a.png}
+			\caption{Design of the quantum circuit}
+			\label{fig:}
+		\end{figure}		
+		
+
+		In Figure 3.7 we can observe on the left side of the screen the measurements of 1024 shots on the quantum processor(ibm\_sherbrook)
+		the circuit was deployed and as we were expecting we have the set of the observed values(vectorstates)
+		0000,0010,0010,0110 as results, stronly appearing qubits q[0] and q[3] entangled.
+
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=0.8\textwidth]{ibmq/b.png}
+			\caption{Left hand side of the screen depicts the results of measurement on the quantum processor}
+			\label{fig:}
+		\end{figure}		
+		
+
+		It is important to note(Figure 3.8) that even in a simpler experiment with just an entangled pair on real 
+		quantum processors might not perfect, and several factors can destabilize the expected states 
+		(like noise, gate imperfections, readout errors, and decoherence) are present and affecting the measurements.
+		As we can inspect, on the probabilities only values (00 and 11) are expected, but from the real measurements 
+		on the left side of the screen we can observe mixed combinations shown up in a small ratio of the 1024 shots.
+		
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=0.8\textwidth]{ibmq/e.png}
+			\caption{A simple entangled pair measurement on the quantum processor.}
+			\label{fig:}
+		\end{figure}		
+		
 
 	\chapter{Discussion}
 
