@@ -2,12 +2,15 @@
 \contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}A brief description of the most common terms in quantum networking}{4}{section.1.1}%
 \contentsline {section}{\numberline {1.2}QKD}{6}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Quantum Repeaters}{6}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Bell state measurement}{7}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Proposed Quantum OSI-like Models}{7}{section.1.5}%
-\contentsline {chapter}{\numberline {2}Related Work}{10}{chapter.2}%
-\contentsline {chapter}{\numberline {3}Methodology and Results}{12}{chapter.3}%
-\contentsline {section}{\numberline {3.1}BB84 Quantum Key Distribution Protocol}{12}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Fidelity against Noise Level}{14}{section.3.2}%
-\contentsline {chapter}{\numberline {4}Discussion}{17}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Conclusion}{18}{chapter.5}%
+\contentsline {section}{\numberline {1.3}Quantum Repeaters}{7}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Quantum Switches}{8}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Bell state measurement}{9}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Proposed Quantum OSI-like Models}{9}{section.1.6}%
+\contentsline {chapter}{\numberline {2}Related Work}{12}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Methodology and Results}{15}{chapter.3}%
+\contentsline {section}{\numberline {3.1}BB84 Quantum Key Distribution Protocol}{15}{section.3.1}%
+\contentsline {section}{\numberline {3.2}QKD application using AES for classic communication}{17}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Fidelity against Noise Level}{17}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Entanglement Swapping}{20}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Discussion}{24}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Conclusion}{25}{chapter.5}%
