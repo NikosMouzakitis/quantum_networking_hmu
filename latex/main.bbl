@@ -1,80 +1,78 @@
 \begin{thebibliography}{1}
 
-
 \bibitem{Khristo2020}
-	Khristo, Y., Asaad, B. and Abdelbaki, N. “Quantum Networking, where it is headed”, in \textit{Proc. 16th Int. Computer Engineering Conf. (ICENCO)}, Cairo, Egypt, Dec. 2020, pp. 1–4.
+Y. Khristo, B. Asaad, and N. Abdelbaki, ``Quantum networking, where it is headed,'' in \textit{Proc. 16th Int. Comput. Eng. Conf. (ICENCO)}, Cairo, Egypt, Dec. 2020, pp. 1–4.
+
+\bibitem{amer-routing}
+O. Amer, W. O. Krawec, and B. Wang, ``Efficient routing for quantum key distribution networks,'' in \textit{2020 IEEE Int. Conf. Quantum Comput. Eng. (QCE)}, 2020, pp. 137–146, doi: 10.1109/QCE49297.2020.00027.
 
 \bibitem{quantum-arch}
-	Van Meter, R., Satoh, R., Benchasattabuse, N., Teramoto, K., Matsuo, T., Hajdušek, M., Satoh, T., Nagayama, S. and Suzuki, S. "A Quantum Internet Architecture", \textit{2022 IEEE International Conference on Quantum Computing and Engineering (QCE)}, 2022, pp. 341-352.
+R. Van Meter, R. Satoh, N. Benchasattabuse, K. Teramoto, T. Matsuo, M. Hajdušek, T. Satoh, S. Nagayama, and S. Suzuki, ``A quantum internet architecture,'' in \textit{2022 IEEE Int. Conf. Quantum Comput. Eng. (QCE)}, 2022, pp. 341–352.
 
 \bibitem{brief-intro}
-Valls, V., Promponas, P. and Tassiulas, L. "A Brief Introduction to Quantum Network Control", in \textit{ Comm. Mag.} 62, 10 (October 2024), pp. 48–53
+V. Valls, P. Promponas, and L. Tassiulas, ``A brief introduction to quantum network control,'' \textit{IEEE Commun. Mag.}, vol. 62, no. 10, pp. 48–53, Oct. 2024.
 
 \bibitem{repeater1}
-	Benchasattabuse, N., Hajdušek, M. and Meter, R. V. "Protocols for All-Photonic Quantum Repeaters" \emph{2023 IEEE International Conference on Quantum Computing and Engineering (QCE)}, Bellevue, WA, USA, 2023, pp. 314--315.
+N. Benchasattabuse, M. Hajdušek, and R. V. Meter, ``Protocols for all-photonic quantum repeaters,'' in \textit{2023 IEEE Int. Conf. Quantum Comput. Eng. (QCE)}, Bellevue, WA, USA, 2023, pp. 314–315.
 
 \bibitem{net-chall-dqc}
-	Cacciapuoti, A. S., Caleffi, M., Tafuri, F., Cataliotti, F. S., Gherardini, S. and Bianchi, G. "Quantum Internet: Networking Challenges in Distributed Quantum Computing," in \textit{IEEE Network}, vol. 34, no. 1, pp. 137-143, January/February 2020
+A. S. Cacciapuoti, M. Caleffi, F. Tafuri, F. S. Cataliotti, S. Gherardini, and G. Bianchi, ``Quantum internet: Networking challenges in distributed quantum computing,'' \textit{IEEE Netw.}, vol. 34, no. 1, pp. 137–143, Jan./Feb. 2020.
 
 \bibitem{pompilli}
-	Pompili, M., Delle Donne, C., te Raa, I., van der Vecht, B., Skrzypczyk, M., Ferreira, G., de Kluijver, L., Stolk, A. J., Hermans, S. L. N., Pawełczak, P., Kozlowski, W., Hanson, R. and Wehner, S. (2022). Experimental demonstration of entanglement delivery using a quantum network stack. \textit{npj Quantum Information}, \textit{8}(1), 121.
+M. Pompili, C. Delle Donne, I. te Raa, B. van der Vecht, M. Skrzypczyk, G. Ferreira, L. de Kluijver, A. J. Stolk, S. L. N. Hermans, P. Pawełczak, W. Kozlowski, R. Hanson, and S. Wehner, ``Experimental demonstration of entanglement delivery using a quantum network stack,'' \textit{npj Quantum Inf.}, vol. 8, no. 1, p. 121, 2022.
 
 \bibitem{e-qnet}
-	Khan, M. A., Aman, M. N. and Sikdar, B. "Architecting the Quantum Future: Key Devices and Layers in Quantum Network Design" in \textit{2024 IEEE Physical Assurance and Inspection of Electronics (PAINE)}, pp. 1-7
+M. A. Khan, M. N. Aman, and B. Sikdar, ``Architecting the quantum future: Key devices and layers in quantum network design,'' in \textit{2024 IEEE Phys. Assurance Inspect. Electron. (PAINE)}, 2024, pp. 1–7.
 
 \bibitem{digital-twins}
-	Lv, Z., Cheng, C. and Song, H. "Digital twins based on quantum networking", in \textit{ IEEE Network}, 36(5),pp. 88-93 (2022)
+Z. Lv, C. Cheng, and H. Song, ``Digital twins based on quantum networking,'' \textit{IEEE Netw.}, vol. 36, no. 5, pp. 88–93, Sep. 2022.
 
 \bibitem{li-arch}
-Li, Z., Xue, K., Li, J., Yu, N., Liu, J., Wei, L., Sun, Q. and Lu, J. "Building a large-scale and wide-area quantum Internet based on an OSI-alike model", in \textit{China Communications}, vol. 18, no. 10, pp. 1--14, Oct. 2021. 
+Z. Li, K. Xue, J. Li, N. Yu, J. Liu, L. Wei, Q. Sun, and J. Lu, ``Building a large-scale and wide-area quantum internet based on an OSI-alike model,'' \textit{China Commun.}, vol. 18, no. 10, pp. 1–14, Oct. 2021.
 
 \bibitem{wehner-arch}
-	Kozlowski, W., Dahlberg, A. and Wehner, S. "Designing a quantum network protocol", in \textit{Proceedings of the 16th International Conference on emerging Networking EXperiments and Technologies (CoNEXT 2020)}, Association for Computing Machinery, New York, NY, USA, 1–16.
+W. Kozlowski, A. Dahlberg, and S. Wehner, ``Designing a quantum network protocol,'' in \textit{Proc. 16th Int. Conf. Emerg. Netw. Exp. Technol. (CoNEXT)}, New York, NY, USA, 2020, pp. 1–16.
 
 \bibitem{entagl-classic}
-	Cacciapuoti, A. S., Caleffi, M., Van Meter, R. and Hanzo, L. "When Entanglement Meets Classical Communications: Quantum Teleportation for the Quantum Internet" in \textit{IEEE Transactions on Communications}, vol. 68, no. 6, pp. 3808-3833, June 2020.
-
+A. S. Cacciapuoti, M. Caleffi, R. Van Meter, and L. Hanzo, ``When entanglement meets classical communications: Quantum teleportation for the quantum internet,'' \textit{IEEE Trans. Commun.}, vol. 68, no. 6, pp. 3808–3833, Jun. 2020.
 
 \bibitem{rfc}
-Kozlowski, W., Wehner, S., Van Meter, R., Rijsman, B., Cacciapuoti, A. S., Caleffi, M. and Nagayama, S. (2023). \textit{RFC 9340: Architectural Principles for a Quantum Internet}. RFC Editor. USA.
+W. Kozlowski, S. Wehner, R. Van Meter, B. Rijsman, A. S. Cacciapuoti, M. Caleffi, and S. Nagayama, \textit{RFC 9340: Architectural Principles for a Quantum Internet}. RFC Editor, 2023.
 
 \bibitem{powergrid}
-Zhou, Y., Tang, Z., Nikmehr, N., Babahajiani, P., Feng, F., Wei, T. C., Zheng, H., and Zhang, P., "Quantum computing in power systems,"\textit{iEnergy}, 2022, vol 1, issue 2: 170-187
-
+Y. Zhou, Z. Tang, N. Nikmehr, P. Babahajiani, F. Feng, T. C. Wei, H. Zheng, and P. Zhang, ``Quantum computing in power systems,'' \textit{iEnergy}, vol. 1, no. 2, pp. 170–187, 2022.
 
 \bibitem{memories}
-Bhaskar, M.K., Riedinger, R., Machielse, B., Levonian, D. S., Nguyen, C. T., Knall, E. N., Park, H., Englund, D., Lončar, M., Sukachev, D. D.i and Lukin, M. D. "Experimental demonstration of memory-enhanced quantum communication" in \textit{Nature}, 580, pp 60–64 (2020).
+M. K. Bhaskar, R. Riedinger, B. Machielse, D. S. Levonian, C. T. Nguyen, E. N. Knall, H. Park, D. Englund, M. Lončar, D. D. Sukachev, and M. D. Lukin, ``Experimental demonstration of memory-enhanced quantum communication,'' \textit{Nature}, vol. 580, pp. 60–64, 2020.
 
 \bibitem{depolar2}
-Urbanek, M., Nachman, B., Pascuzzi, V. R., He, A., Bauer, C. W., and de Jong, W. A.,
-"Mitigating Depolarizing Noise on Quantum Computers with Noise-Estimation Circuits,"
-\textit{Phys. Rev. Lett.}, vol. 127, no. 27, p. 270502, Dec. 2021.
-
+M. Urbanek, B. Nachman, V. R. Pascuzzi, A. He, C. W. Bauer, and W. A. de Jong, ``Mitigating depolarizing noise on quantum computers with noise-estimation circuits,'' \textit{Phys. Rev. Lett.}, vol. 127, no. 27, p. 270502, Dec. 2021.
 
 \bibitem{quantum-switch1}
-	Caleffi, M. and Cacciapuoti, A. S. "Quantum Switch for the Quantum Internet: Noiseless Communications Through Noisy Channels," in \textit{IEEE Journal on Selected Areas in Communications}, vol. 38, no. 3, pp. 575-588, March 2020
+M. Caleffi and A. S. Cacciapuoti, ``Quantum switch for the quantum internet: Noiseless communications through noisy channels,'' \textit{IEEE J. Sel. Areas Commun.}, vol. 38, no. 3, pp. 575–588, Mar. 2020.
 
 \bibitem{advance-arch}
-Alshowkan, M., Evans, P., Williams, B., Rao, N., Marvinney, C., Pai, Y., Lawrie, B., Peters, N., and Lukens, J. "Advanced architectures for high-performance quantum networking", in \textit{Journal of Optical Communications and Networking}, 14, pp. 493-499.(2022)
+M. Alshowkan, P. Evans, B. Williams, N. Rao, C. Marvinney, Y. Pai, B. Lawrie, N. Peters, and J. Lukens, ``Advanced architectures for high-performance quantum networking,'' \textit{J. Opt. Commun. Netw.}, vol. 14, pp. 493–499, 2022.
 
+\bibitem{space}
+L. Borgianni, D. Adami, and S. Giordano, ``Quantum networking for secure and reliable communication in space exploration,'' \textit{IEEE Commun. Mag.}, vol. 24, no. 10, pp. 70--76, Oct. 2024
 
 \bibitem{bb84}
-	Bennett, C. H and Brassard, G. "Quantum cryptography: Public key distribution and coin tossing," in \textit{ Proc. IEEE Int. Conf. Computers, Systems and Signal Processing}, 1984, pp. 175–179.
+C. H. Bennett and G. Brassard, ``Quantum cryptography: Public key distribution and coin tossing,'' in \textit{Proc. IEEE Int. Conf. Comput., Syst. Signal Process.}, 1984, pp. 175–179.
 
 \bibitem{depolarization}
-	King, C. "The capacity of the quantum depolarizing channel" in \textit{Information Theory, IEEE Transactions} on. 49. pp. 221 - 229 (2003). 
+C. King, ``The capacity of the quantum depolarizing channel,'' \textit{IEEE Trans. Inf. Theory}, vol. 49, no. 1, pp. 221–229, 2003.
 
 \bibitem{dur-multipartite}
-Walln{\"o}fer, J., Pirker, A., Zwerger, M. and D{\"u}r, W. "Multipartite state generation in quantum networks with optimal scaling", in \textit{Scientific Reports}, vol. 9, no. 1, article 314, Jan. 2019.
+J. Wallnöfer, A. Pirker, M. Zwerger, and W. Dür, ``Multipartite state generation in quantum networks with optimal scaling,'' \textit{Sci. Rep.}, vol. 9, no. 1, Art. no. 314, Jan. 2019.
 
 \bibitem{qutip}
-	Johansson, J. R., Nation, P. D. and Nori, F. \textit{“QuTiP 2: A Python framework for the dynamics of open quantum systems”, Comp. Phys. Comm. 184}, 1234 (2013).
+J. R. Johansson, P. D. Nation, and F. Nori, ``QuTiP 2: A Python framework for the dynamics of open quantum systems,'' \textit{Comput. Phys. Commun.}, vol. 184, p. 1234, 2013.
 
 \bibitem{qiskit}
-	Javadi-Abhari, A., Treinish, M., Krsulich, K., Wood, C. J., Lishman, J., Gacon, J., Martiel, S., Nation, P., Bishop, L. S., Cross, A. W., Johnson, B. R. and Gambetta, J. M. (2024, May 15). "Quantum computing with Qiskit" arXiv. https://arxiv.org/abs/2405.08810. Accessed January 20, 2025.
+A. Javadi-Abhari et al., ``Quantum computing with Qiskit,'' arXiv:2405.08810, 2024. [Online]. Available: https://arxiv.org/abs/2405.08810
 
 \bibitem{superposition-orders-proof}
-Salek, S., Ebler, D. and Chiribella, G., "Quantum communication in a superposition of causal orders", arXiv preprint arXiv:1809.06655. Accessed January 21, 2025.
+S. Salek, D. Ebler, and G. Chiribella, ``Quantum communication in a superposition of causal orders,'' arXiv:1809.06655, 2018. [Online]. Available: https://arxiv.org/abs/1809.06655
 
 \end{thebibliography}
-

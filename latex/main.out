@@ -1,16 +1,19 @@
-\BOOKMARK [0][-]{chapter*.1}{Abstract}{}% 1
-\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 2
-\BOOKMARK [1][-]{section.1.1}{A brief description of the most common terms in quantum networking}{chapter.1}% 3
-\BOOKMARK [1][-]{section.1.2}{QKD}{chapter.1}% 4
-\BOOKMARK [1][-]{section.1.3}{Quantum Repeaters}{chapter.1}% 5
-\BOOKMARK [1][-]{section.1.4}{Quantum Switches}{chapter.1}% 6
-\BOOKMARK [1][-]{section.1.5}{Bell state measurement}{chapter.1}% 7
-\BOOKMARK [1][-]{section.1.6}{Proposed Quantum OSI-like Models}{chapter.1}% 8
-\BOOKMARK [0][-]{chapter.2}{Related Work}{}% 9
-\BOOKMARK [0][-]{chapter.3}{Methodology and Results}{}% 10
-\BOOKMARK [1][-]{section.3.1}{BB84 Quantum Key Distribution Protocol}{chapter.3}% 11
-\BOOKMARK [1][-]{section.3.2}{QKD application using AES for classic communication}{chapter.3}% 12
-\BOOKMARK [1][-]{section.3.3}{Fidelity against Noise Level}{chapter.3}% 13
-\BOOKMARK [1][-]{section.3.4}{Entanglement Swapping}{chapter.3}% 14
-\BOOKMARK [0][-]{chapter.4}{Discussion}{}% 15
-\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 16
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{A brief description of the most common terms in quantum networking}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{QKD}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{Quantum Repeaters}{section.1}% 4
+\BOOKMARK [2][-]{subsection.1.4}{Quantum Switches}{section.1}% 5
+\BOOKMARK [2][-]{subsection.1.5}{Bell state measurement}{section.1}% 6
+\BOOKMARK [2][-]{subsection.1.6}{Proposed Quantum OSI-like Models}{section.1}% 7
+\BOOKMARK [2][-]{subsection.1.7}{Quantum error correction}{section.1}% 8
+\BOOKMARK [1][-]{section.2}{Related Work}{}% 9
+\BOOKMARK [1][-]{section.3}{Methodology and Results}{}% 10
+\BOOKMARK [2][-]{subsection.3.1}{BB84 Quantum Key Distribution Protocol}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.2}{QKD application using AES for classic communication}{section.3}% 12
+\BOOKMARK [2][-]{subsection.3.3}{Fidelity against Noise Level}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.4}{Entanglement Swapping}{section.3}% 14
+\BOOKMARK [2][-]{subsection.3.5}{Quantum Error Correction}{section.3}% 15
+\BOOKMARK [1][-]{section.4}{Discussion}{}% 16
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 17
+\BOOKMARK [1][-]{section.5}{REFERENCES}{}% 18
+\BOOKMARK [1][-]{appendix.Appendix.A}{Appendix}{}% 19

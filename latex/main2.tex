@@ -1,4 +1,5 @@
-\documentclass[12pt]{ieeetj}
+\documentclass[12pt,a4paper] {report}
+
 % Packages
 \usepackage{graphicx}
 \usepackage{amsmath}
@@ -6,10 +7,6 @@
 \usepackage{setspace}
 \usepackage{listings}
 \usepackage{xcolor}  % Include xcolor for text color
-\usepackage{abstract}
-\usepackage{float}
-
-% Customize section font size
 
 \lstset{
   literate={\_}{{\_}}{1},   % Replace _ with the literal \_
@@ -23,10 +20,10 @@
 \title{\LARGE \textbf{Quantum Networking: Explore QKD and quantum internet}}
 \author{}
 \date{\large On: \today}
-\def\seclogo{} 
+
 % Begin Document
 \begin{document}
-\onecolumn
+
 % Title Page
 \makeatletter
 \begin{titlepage}
@@ -49,27 +46,22 @@ Project for\\[1cm]
 % Abstract
 
 
-	\begin{abstract}
-	%\addcontentsline{toc} {chapter} {Abstract}
+	\chapter* {Abstract}
+	\addcontentsline{toc} {chapter} {Abstract}
 
 		Quantum networking represents a transformative advancement in secure communication,
-		utilizing principles of quantum mechanics such as superposition, entanglement, no-cloning theorem for addressing
-		vulnerabilities in widely adopted classical cryptographic systems, 
 		with Quantum Key Distribution (QKD) and the quantum internet standing at its core.
-		Unlike the classical systems, QKD leverages certain mechanical principles
-		from the field of quantum physics in order to theoretically guarantee unbreakable encryption schemes.
+		Unlike the widely available and adopted classical systems, QKD leverages certain mechanical principles
+		from the field of quantum physics in order to theoretically guarantee unbreakable encryption schemes,
+		addressing critical vulnerabilities in modern cryptographic methods.
 		In the early days of its rise, quantum internet promises a global network enabling unprecedented levels of
 		secure communication, distributed quantum computing, and advanced scientific applications.
-		Despite the progress, scalability remains a main bottleneck, alongside with the issues that leads into this scalability challenge. 
-		Current quantum networks are constrained because of photon loss in fiber optic mediums, quantum gate losses and noise to quantum states
-		are very fragile. All these behaviors introduce diffuculties for scaling quantum systems.
-		In this project the current state of quantum networking is explored and simulations using QuTiP or
-		experimental deployments on IBM’s quantum computers (IBMQ) are presented to study entanglement distribution,
-		quantum teleportation, quantum state error correction and hybrid quantum-classical network communication.
 
-	\end{abstract}
-	
-        \section{Introduction}
+% Table of Contents
+\tableofcontents
+
+        % Chapters
+        \chapter{Introduction}
 
 		Quantum networking stands as the next frontier in communication technology,
 		which is expected to leverage principles of quantum mechanics for
@@ -123,14 +115,14 @@ Project for\\[1cm]
 		description of the most common terminology of quantum networking.	
 		In the related work section recent advancements in quantum networking are presented, with a focusing on technologies such as 
 		quantum key distribution, entanglement distribution, and quantum repeaters. 
-		In the combined methodology and results section, showcases examples to study the key elements of quantum networking and presents the findings
-		from a simulation-based approach utilizing QuTiP and actual deployment of programs in IBM's quantum computers from the IBMQ platform.
+		In the combined methodology and results section, a simulation-based approach utilizing QuTiP 
+		showcases examples to study the key elements of quantum networking, presenting the findings from the simulations.
 		The discussion section interprets these findings in the context of existing literature, 
 		identifying both strengths and limitations of current technologies. 
 		In the end, the conclusion section summarizes the project's work.
 
 
-		\subsection{A brief description of the most common terms in quantum networking}
+		\section{A brief description of the most common terms in quantum networking}
 
 		A \textbf{quantum network} consists of a set of quantum processors/devices connected to each other. \textbf{Qubits} can be particles such as photons
 		or electrons, carrying certain properties derived from quantum mechanics called \textit{state}. A state's can express the spin of an electron or
@@ -182,7 +174,8 @@ Project for\\[1cm]
 		in protocols such as Quantum Key Distribution (QKD) because it is impossible for any eavesdropper who copies
 		quantum states in order to intercept informations to operate unnoticed.
 
-		\subsection{QKD}
+		\section{QKD}
+
 
 		Quantum Key Distribution (QKD) is a revolutionary method for securely exchanging cryptographic keys between two distant parties\cite{powergrid}, 
 		commonly referred to as Alice (the sender) and Bob (the receiver). 
@@ -234,7 +227,7 @@ Project for\\[1cm]
 		information-theoretic secure. While it still faces some practical challenges, QKD holds high expectations for the 
 		future of secure communications.
 
-		\subsection{Quantum Repeaters}
+		\section{Quantum Repeaters}
 		
 		Quantum repeaters are devices which are designed to extend the range of quantum communication networks. They 
 		are required to enable QKD in long distances and for supporting the construction of a future quantum internet.
@@ -272,7 +265,7 @@ Project for\\[1cm]
 		Quantum repeaters integrate error correction protocols like entanglement purification
 		in order to tackle this issue.
 
-		\subsection{Quantum Switches}
+		\section{Quantum Switches}
 		
 		A quantum switch is a fundamental device of the quantum networking 
 		architecture which
@@ -297,7 +290,7 @@ Project for\\[1cm]
 		which makes use of the superposition of order to generate new possibilities for 
 		quantum communication in ways unachievable by design for classical communications. 
 
-		\subsection{Bell state measurement}
+		\section{Bell state measurement}
 
 		A Bell State Measurement (BSM) is a quantum operation designed to determine
 		the entangled state of two qubits. The set of Bell states consists of four 
@@ -317,7 +310,7 @@ Project for\\[1cm]
 		in quantum networks establishes BSMs to be a critical element on the future quantum architectures. 
 
 
-		\subsection{Proposed Quantum OSI-like Models}
+		\section{Proposed Quantum OSI-like Models}
 		
 		Quantum Internet(QI) architecture research has been studied and lead into several OSI-like protocol 
 		stack models, where the common aspect of all has been the exploitation of
@@ -344,12 +337,10 @@ Project for\\[1cm]
 
 		As for the main network entities of the quantum networking paradigm\cite{e-qnet} are presented in Table 1.1.
 
-
-
 		\begin{table}[h!]
 		\centering
-		\renewcommand{\arraystretch}{0.6}
-			\begin{tabular}{|p{4.5cm}|p{8cm}|}
+		\renewcommand{\arraystretch}{1.5}
+			\begin{tabular}{|p{5.5cm}|p{10cm}|}
 			\hline
 			\textbf{Entity} & \textbf{Role} \\ \hline
 			quantum end nodes	&  able to transmit and process qubits for quantum applications		\\ \hline
@@ -364,21 +355,9 @@ Project for\\[1cm]
 		\caption{Network entities of the quantum networking paradigm}
 		\label{tab:example}
 		\end{table}
-		
-
-		\subsection{Quantum error correction}
-
-		Quantum error correction consists of the techniques that have been designed for the
-		detection and correction of errors in quantum communication systems, such as those that can occur 
-		in quantum computers or quantum communication channels-mediums.
-		Unlike classical error correction, QEC has to deal with the unique challenges of quantum mechanics,
-		like decoherence (loss of quantum states due to environmental noise), quantum noise, 
-		and the no-cloning theorem.
-		
 
 
-
-\section{Related Work}
+\chapter{Related Work}
 		In recent years, quantum networking has gained
 		significant attention due to its potential to ignite a revolution in
 		secure communications and distributed computing.
@@ -388,11 +367,6 @@ Project for\\[1cm]
 		development of quantum networks have been discussed while in addition
 		explored the integration of the quantum key distribution (QKD)
 		and presented a broader vision for the quantum internet.
-		Amer et al.\cite{amer-routing} investigated routing strategies for quantum key distribution (QKD) networks 
-		that make use of quantum repeaters and trusted nodes. 
-		Researchers proposed three different routing protocols for optimizing entanglement distribution 
-		for a grid based network. In their conclusion they underline the critical role of routing algorithm design 
-		and provides insights into how hybrid QKD networks should be optimized and the tradeoffs they face. 
 		Valls and co-authors \cite{brief-intro}, discuss quantum operations for network
 		control and present a model for multi-hop distribution of entanglement among the nodes of
 		a quantum system, functionalities that need to be efficient for the support of distributed
@@ -473,14 +447,8 @@ Project for\\[1cm]
 		communication security on Industrial Internet of Things(IIoT). In their work, they demonstrate how QKD can be applied
 		for secure communication in the field of IIoT and explore the integration of quantum networking and digital twins in order
 		to enlight how can the virtual models interact through quantum communication channels.
-		Borgianni et al.\cite{space} proposed a hybrid architecture (quantum and classical) for the space exploration domain. 
-		By utilization of terrestrial and non terrestrial quantum networks (QNs), 
-		in their proposed framework making use of quantum entanglement and QKD in order to achieve secure,
-		high-fidelity communication between Earth and spacecraft. 
-		Authors give emphasis on the role of Free Space Optical links and SDN for achiving the 
-		bridge alongside quantum and classical systems
 
-	\section{Methodology and Results}
+	\chapter{Methodology and Results}
 		
 		For the purposes of this project, a
 		simulation approach using software tools
@@ -494,7 +462,7 @@ Project for\\[1cm]
 		IBM Quantum Composer (graphical drag and drop quantum programming tool) where quantum operations for generating quantum circuits 
 		are available.
 
-		\subsection{BB84 Quantum Key Distribution Protocol}
+		\section{BB84 Quantum Key Distribution Protocol}
 
 		BB84 protocol is a foundational work in the field
 		of quantum key distribution (QKD) protocols,
@@ -515,35 +483,35 @@ Project for\\[1cm]
 		discarded, since the outcome of the measurement on a mismatched base is probabilistic,
 		and this does not ensure an identical secret key for both parties.
 
-		\begin{figure}[H]
+		\begin{figure}[h!]
 			\centering
-			\includegraphics[width=0.7\textwidth]{bb84/success_rate_terminal.png}
+			\includegraphics[width=0.8\textwidth]{bb84/success_rate_terminal.png}
 			\caption{Execution of code of Listing 1 of Appendix A.}
-			\label{fig1:}
+			\label{fig:}
 		\end{figure}		
 
-		\begin{figure}[H]
+		\begin{figure}[h!]
 			\centering
 			\includegraphics[width=0.6\textwidth]{bb84/basis_matching.png}
 			\caption{Bases matched on the example where 100 qubits used.}
-			\label{fig2:}
+			\label{fig:}
 		\end{figure}		
 
 
-		\begin{figure}[H]
+		\begin{figure}[h!]
 			\centering
 			\includegraphics[width=0.6\textwidth]{bb84/success_rate_vs_num_qubits.png}
 			\caption{Success rate vs number of qubits used.}
-			\label{fig3:}
+			\label{fig:}
 		\end{figure}		
 
-		As we can observe in Figure 3, the relation of success rate is plotted against the utilized 
+		As we can observe in Figure 3.3, the relation of success rate is plotted against the utilized 
 		number of qubits in the protocol. The simulation was run for up to 10000 qubits. 
 		Success rate is converging to value 0.5, as the probability 
 		of Alice and Bob choosing the same base ('x' or 'z') is 50\%.
 
 
-		\subsection{QKD application using AES for classic communication}
+		\section{QKD application using AES for classic communication}
 
 		In the Listing 3 of Appendix A, building on the previous example of generating a key,
 		we extend the functionality in encrypted message exchanges among two entities, using the secret key created
@@ -551,20 +519,20 @@ Project for\\[1cm]
 		Also a limit on the success rate of the key generation is implemented,
 		so each time that the success rate is not satisfied
 		generation restarts. In this example 256 qubits were selected with success rate to be above 0.58.
-		The execution of the simulation is presented on Figure 4, one message is sent by each entity simulating
+		The execution of the simulation is presented on Figure 3.4, one message is sent by each entity simulating
 		an encrypted ping-pong among them. In a real application we could have implemented 
 		other features as well such as a key lifetime(how often the AES key should be refreshed)
 		authentication between the entities start the QKD process and error correction as it would be required.
 		
-		\begin{figure}[H]
+		\begin{figure}[h!]
 			\centering
-			\includegraphics[width=0.7\textwidth]{qkd_aes/app.png}
+			\includegraphics[width=0.9\textwidth]{qkd_aes/app.png}
 			\caption{Simple encrypted message exchange among the two nodes using the key generated by QKD for AES.}
-			\label{fig4:}
+			\label{fig:}
 		\end{figure}		
 
 
-		\subsection{Fidelity against Noise Level}	
+		\section{Fidelity against Noise Level}	
 		
 		In this simulation (code is in Listing 2 of Appendix A), a model of a quantum repeater network with
 		entanglement swapping is created in order to observe how the fidelity of the final entangled state is
@@ -587,14 +555,14 @@ Project for\\[1cm]
 
 		This form to model the noise is used in the presented simulation code.
 	
-		\begin{figure}[H]
+		\begin{figure}[h!]
 			\centering
-			\includegraphics[width=0.6\textwidth]{repeater/entanglement_swap.png}
+			\includegraphics[width=0.7\textwidth]{repeater/entanglement_swap.png}
 			\caption{Set up for the entanglement swapping}
-			\label{fig5:}
+			\label{fig:}
 		\end{figure}		
 
-		In the set up of Figure 5 we can inspect that qubits q1 (node A) and q2 (node B) are
+		In the set up of Figure 3.5 we can inspect that qubits q1 (node A) and q2 (node B) are
 		entangled in Bell1(Bell state 1) and q4 (node C) and q3 (node B) are entangled in Bell2(Bell state 2).
 		Node A and Node C, could create these entangled pairs and sent 1 qubit each into the intermediate
 		Node B. The BSM(measurement) occurs in Node B, and as a consequence the initial entanglement between
@@ -612,452 +580,95 @@ Project for\\[1cm]
 		As the noise in the system increases, the fidelity of the final state decreases,
 		indicating the decrease in quantum entanglement quality.
 
-		\begin{figure}[H]
+		\begin{figure}[h!]
 			\centering
-			\includegraphics[width=0.5\textwidth]{repeater/fid_vs_noise.png}
+			\includegraphics[width=0.6\textwidth]{repeater/fid_vs_noise.png}
 			\caption{Fidelity vs Noise Level.}
-			\label{fig6:}
+			\label{fig:}
 		\end{figure}		
 
 		A value of 1 indicates the maximum perfect fidelity where there is no loss of entanglement, 
 		while lower values indicate a degradation due to noise.
 		In practice a fidelity value less than 0.5 indicates that the state is unsuitable for further quantum processing.
-		In Figure 6 we can inspect that as the noise level increases, the fidelity decreases,
+		In Figure 3.6 we can inspect that as the noise level increases, the fidelity decreases,
 		an expected behavior since noise disrupts the quantum states,
 		making the final entangled state less similar to the ideal state.
 
 
 
-		\subsection{Entanglement Swapping}
+
+		\section{Entanglement Swapping}
 
 		For an entanglement swapping experiment, the IBM Quantum composer has been utilized for creating a circuit, which later
 		was deployed in one of the available quantum processors. This experiment is actually a "continuation" from the 
-		previous experiment presented in Figure 5. Again we start with 4 qubits (q[0], q[1],q[2] and q[3]) and the goal is to entangle
-		q[0] and q[3]. In Figure 7 initially we create the entanglements alongside q[0] and q[1] using Hadamard gate in conjunction with
+		previous experiment presented in Figure 3.5. Again we start with 4 qubits (q[0], q[1],q[2] and q[3]) and the goal is to entangle
+		q[0] and q[3]. In Figure 3.7 initially we create the entanglements alongside q[0] and q[1] using Hadamard gate in conjunction with
 		a CNOT gate. Then the same procedure applies for qubits q[2] and q[3].
 
-		\begin{figure}[H]
+		\begin{figure}[h!]
 			\centering
 			\includegraphics[width=0.6\textwidth]{ibmq/a.png}
 			\caption{Design of the quantum circuit}
-			\label{fig7:}
+			\label{fig:}
 		\end{figure}		
 		
 
-		In Figure 8 we can observe on the left side of the screen the measurements of 1024 shots on the quantum processor(ibm\_sherbrook)
+		In Figure 3.8 we can observe on the left side of the screen the measurements of 1024 shots on the quantum processor(ibm\_sherbrook)
 		the circuit was deployed and as we were expecting we have the set of the observed values(vectorstates)
 		0000,0010,0010,0110 as results, stronly appearing qubits q[0] and q[3] entangled.
 
-		\begin{figure}[H]
+		\begin{figure}[h!]
 			\centering
-			\includegraphics[width=0.6\textwidth]{ibmq/b.png}
+			\includegraphics[width=0.8\textwidth]{ibmq/b.png}
 			\caption{Left hand side of the screen depicts the results of measurement on the quantum processor}
-			\label{fig8:}
+			\label{fig:}
 		\end{figure}		
 	
 
 
-		Using a different circuit for the same purpose shown in Figure 9, as provided by authors in \cite{brief-intro},
+		Using a different circuit for the same purpose shown in Figure 3.9, as provided by authors in \cite{brief-intro},
 		where also correction occurs conditionally based on the measured value of the qubit q[2],
 		we can inspect again from the probabilities window, that the qubits q[0] and q[3] become eventually an entangled pair.
 
-		\begin{figure}[H]
+		\begin{figure}[h!]
 			\centering
-			\includegraphics[width=0.6\textwidth]{ibmq/yale_circuit.png}
+			\includegraphics[width=0.8\textwidth]{ibmq/yale_circuit.png}
 			\caption{Qubits q[0] and q[3] are an entangled pair}
-			\label{fig9:}
+			\label{fig:}
 		\end{figure}		
 		
-		When we get the results from the IBM quantum processor though, in Figure 10, we can inspect that we have 
+		When we get the results from the IBM quantum processor though, in Figure 3.10, we can inspect that we have 
 		interference from factors that destabilize the ideal behavior of the quantum circuit, 
 		and we can see the presence of combinations that we were expecting not to be present
 		on the measurement.
 
-		\begin{figure}[H]
+		\begin{figure}[h!]
 			\centering
-			\includegraphics[width=0.6\textwidth]{ibmq/real_entanglement.png}
+			\includegraphics[width=0.8\textwidth]{ibmq/real_entanglement.png}
 			\caption{Results on the left hand side, with decoherence errors from running on a real quantum processor.}
-			\label{fig10:}
+			\label{fig:}
 		\end{figure}		
 		
 
 
 		% noise and imperfection on measurements.
-		It is important to note(Figure 11) that even in a simpler experiment with just an entangled pair on real 
+		It is important to note(Figure 3.11) that even in a simpler experiment with just an entangled pair on real 
 		quantum processors might not perfect, and several factors can destabilize the expected states 
 		(like noise, gate imperfections, readout errors, and decoherence) are present and affecting the measurements.
 		As we can inspect, on the probabilities only values (00 and 11) are expected, but from the real measurements 
 		on the left side of the screen we can observe mixed combinations shown up in a small ratio of the 1024 shots.
 		
-		\begin{figure}[H]
+		\begin{figure}[h!]
 			\centering
-			\includegraphics[width=0.6\textwidth]{ibmq/e.png}
+			\includegraphics[width=0.8\textwidth]{ibmq/e.png}
 			\caption{A simple entangled pair measurement on the quantum processor.}
-			\label{fig11:}
+			\label{fig:}
 		\end{figure}		
 		
-		
 
-		\subsection{Quantum Error Correction}
-		
-		In this example, we have implemented the 3-qubit bit-flip code to demonstrate error correction in
-		quantum circuits.
-		
-		In order to achieve the error correction, 3 physical qubits are encoding one logical cubit.
-		For example 
-		
-			\[
-				|1\rangle \rightarrow |111\rangle 
-			\]
+	\chapter{Discussion}
 
-		Also \textit{syndrome} is used, a set of classical bits that can tell us if and where an error has
-		occurred in our encoded quantum state, but without directly measuring the logical qubit itself, because
-		this would result in a collapse of its state.
+	\chapter{Conclusion}
 
-		Initially Figure 12, 
-		we prepare the (111) state by applying the X-gate on q[0] and, 
-		using CNOT with targets q[1] and q[2]
-		using q[0] as control. We can observe the first 3 bits on the state vector 00\textbf{111}.
-		\begin{figure}[H]
-			\centering
-			\includegraphics[width=0.3\textwidth]{ibmq/step_a.png}
-			\caption{Step 1.}
-			\label{fig12:}
-		\end{figure}		
-
-		Then we apply an X-gate to q[1] to introduce an error which we can observe as the 2nd bit flips
-		to 00\textbf{101}(Figure 13).
-		\begin{figure}[H]
-			\centering
-			\includegraphics[width=0.3\textwidth]{ibmq/step_b.png}
-			\caption{Step 2.}
-			\label{fig13:}
-		\end{figure}		
-
-
-		In next step, we are also using the helper qubits (q[3] and q[4]) in order to detect if a 
-		single bit-flip has occured without directly measuring the encoded quantum state on q[0:2] to avoid 
-		state collapse.
-		In first CNOT among q[0] and q[3], if q0 is 1,
-		q3 flips from 0 to 1. Applying the second CNOT among q[1] and q[3], 
-		if q1 is 1, q[3] flips again. In this way we compare q[0] and q[1].
-		As a result, if q0 and q1 agree (both 0 or both 1), 
-		q3 ends at 0 and if they do not, q[3] ends at 1.
-
-		The same method then is repeated to compare the qubits q[1] and q[2] for aggrement.
-		We take two measurements on the classical 2 bit register named \textit{syndrome}.
-		As we can observe in Figure 14, all registers are showing 1's on probabilities, therefore
-		\textit{syndrome} = 11, meaning as expected(because of the forced flip) 
-		that both comparissons of the qubit pairs disagree.
-
-		\begin{figure}[H]
-			\centering
-			\includegraphics[width=0.5\textwidth]{ibmq/step_c.png}
-			\caption{Step 3:Syndrome Measurement}
-			\label{fig14:}
-		\end{figure}		
-
-
-
-
-
-		The implemented circuit is presented in Figure 12, where initially 
-
-		\begin{figure}[H]
-			\centering
-			\includegraphics[width=0.6\textwidth]{ibmq/3bitcirc.png}
-			\caption{Circuit for performing error correction scheme.}
-			\label{fig12:}
-		\end{figure}		
-		
-		\begin{figure}[H]
-			\centering
-			\includegraphics[width=0.7\textwidth]{ibmq/3bitibmq.png}
-			\caption{Circuit on IBMQ for correction scheme.}
-			\label{fig13:}
-		\end{figure}		
-	
-
-
-
-
-	\section{Discussion}
-	asdsdfsd
-	\section{Conclusion}
-	dsdfsdf
-
-\newpage
-\bibliographystyle{plain}
-\bibliography{references}
-\newpage
-\appendix
-
-\section{Appendix A: Simulation Code }
-
-%\begin{lstlisting}[language=Python, caption=BB84 for QKD, label=code:QKD, escapeinside=||]
-\begin{lstlisting}[language=Python, caption=BB84 for QKD, label=code:QKD]
-from qutip import basis, ket2dm
-import numpy as np
-zero = basis(2, 0)  ''' |0> '''
-one = basis(2, 1)   ''' |1> ''' 
-plus = (zero + one).unit()  ''' |+> '''
-minus = (zero - one).unit() ''' |-> ''' 
-''' Alice's qubits'''
-def generate_bb84_states(num_qubits):
-    states = []
-    bases = []
-    for _ in range(num_qubits):
-        basis_choice = np.random.choice(['z', 'x'])
-        bit = np.random.choice([0, 1])
-        if basis_choice == 'z':
-            states.append(zero if bit == 0 else one)
-        else:
-            states.append(plus if bit == 0 else minus)
-        bases.append(basis_choice)
-    return states, bases
-'''Measurement'''
-def measure_state(state, basis):
-    if basis == 'z':
-        projection = [zero, one]
-    else:  ''' 'x' '''
-        projection = [plus, minus]
-    probabilities = [abs(proj.overlap(state))**2 for proj in projection]
-    return np.random.choice([0, 1], p=probabilities)
-'''Simulation'''
-num_qubits = 100
-alice_states, alice_bases = generate_bb84_states(num_qubits)
-bob_bases = np.random.choice(['z', 'x'], num_qubits)
-''' Measure and compare '''
-bob_results = [measure_state(state, bob_bases[i]) for i, state in enumerate(alice_states)]
-matching_bases = [alice_bases[i] == bob_bases[i] for i in range(num_qubits)]
-shared_key = [bob_results[i] for i in range(num_qubits) if matching_bases[i]]
-''' Calculate success rate'''
-success_rate = len(shared_key) / num_qubits
-print(f"Key Exchange Success Rate: {success\_rate:.2f}")
-import matplotlib.pyplot as plt
-''' Visualization 1: Basis Matching (Bar Chart)'''
-matched = sum(matching_bases)
-mismatched = num_qubits - matched
-plt.figure(figsize=(8, 6))
-plt.bar(['Matched', 'Mismatched'], [matched, mismatched], color=['green', 'red'])
-plt.title('Basis Matching in BB84 Protocol')
-plt.xlabel('Basis Match')
-plt.ylabel('Number of Qubits')
-plt.savefig('Basis Matching in BB84 Protocol.png')
-''' Visualization 2: Success Rate vs. Number of Qubits (Line Chart) '''
-num_qubits_list = [10, 50, 100, 200, 500, 1000, 2000, 3000, 4000, 5000, 8000, 10000]
-success_rates = []
-for nq in num_qubits_list:
-    alice_states, alice_bases = generate_bb84_states(nq)
-    bob_bases = np.random.choice(['z', 'x'], nq)
-    bob_results = [measure_state(state, bob_bases[i]) for i, state in enumerate(alice_states)]
-    matching_bases = [alice_bases[i] == bob_bases[i] for i in range(nq)]
-    shared_key = [bob_results[i] for i in range(nq) if matching_bases[i]]
-    success_rate = len(shared_key) / nq
-    success_rates.append(success_rate)
-plt.figure(figsize=(8, 6))
-plt.plot(num_qubits_list, success_rates, marker='o', color='b')
-plt.title('Success Rate vs. Number of Qubits')
-plt.xlabel('Number of Qubits')
-plt.ylabel('Success Rate')
-plt.grid(True)
-plt.savefig("Success Rate vs Number of Qubits.png")
-
-\end{lstlisting}
-
-
-\begin{lstlisting}[language=Python, caption=Entanglement swapping(fidelity vs polarizing noise), label=code:entanglement-swap]
-
-from qutip import *
-import numpy as np
-import matplotlib.pyplot as plt
-
-''' Define Bell state '''
-def create_bell_state():
-    zero = basis(2, 0)  
-    one = basis(2, 1)   
-    bell_state = (tensor(zero, zero) + tensor(one, one)).unit()  
-    bell_dm = ket2dm(bell_state)  ''' Convert to density matrix, shape: (4, 4)'''
-    return bell_dm
-
-''' Apply noise to a quantum state (Depolarizing channel)'''
-def apply_depolarizing_noise(state, p):
-    dim = np.prod(state.dims[0])  ''' Total dimension of the system'''
-    identity = qeye(dim)  ''' Identity operator, shape: (dim, dim)'''
-    identity.dims = state.dims
-    n1=(1-p)*state
-    n2 = (p/dim)*identity
-    noisy_state = (1 - p) * state + (p / dim) * identity
-    return noisy_state
-
-''' Entanglement swapping '''
-def entanglement_swapping(bell1, bell2):
-    """
-    Perform entanglement swapping between two Bell states:
-    bell1: A-B (shape: (4, 4)), bell2: B-C (shape: (4, 4))
-    Returns:
-    - swapped_state: final entangled state between A and C (shape: (4, 4))
-    """
-    # Bell measurement on qubits 2 and 3 (middle qubits)
-    bell_meas = (tensor(basis(2, 0), basis(2, 0)).proj() + 
-                 tensor(basis(2, 1), basis(2, 1)).proj())  # Bell basis, shape: (4, 4)
-    projection = tensor(qeye(2), bell_meas, qeye(2))  # Operate on qubits 2 and 3, shape: (16, 16)
-    
-    # Combine the two input states into a joint density matrix
-    joint_state = tensor(bell1, bell2)  # Combined state, shape: (16, 16)
-    
-    # Apply projection for entanglement swapping
-    swapped_state = (projection * joint_state * projection.dag()).unit()  # Shape: (16, 16)
-    
-    # Partial trace over qubits 2 and 3 to get A-C state
-    final_state = swapped_state.ptrace([0, 3])  # Shape: (4, 4)
-    return final_state
-
-# Network Simulation
-def simulate_network():
-    """
-    Simulates a basic quantum repeater network with entanglement swapping.
-    Returns:
-    - fidelity_value: fidelity of the final entangled state with an ideal Bell state
-    """
-    noise_levels = np.linspace(0, 1, 20)  # Noise levels from 0 to 1
-    fidelities = []
-
-
-    ''' Step 1: Create initial entanglement between nodes'''
-    bell1 = create_bell_state()  # Between nodes A and B
-    print(bell1)
-
-    bell2 = create_bell_state()  # Between nodes B and C
-    print(bell2)
-    
-    ''' Step 2: Calculate fidelity for different noise levels '''
-    for p in noise_levels:
-        bell1_noisy = apply_depolarizing_noise(bell1, p)
-        bell2_noisy = apply_depolarizing_noise(bell2, p)
-        final_state = entanglement_swapping(bell1_noisy, bell2_noisy)
-        ideal_bell = create_bell_state()
-        print(ideal_bell)
-        fidelity_value = fidelity(final_state, ideal_bell)
-        fidelities.append(fidelity_value)
-    
-    ''' Step 3: Plot fidelity vs noise level'''
-    plt.plot(noise_levels, fidelities)
-    plt.xlabel("Noise Level (p)")
-    plt.ylabel("Fidelity")
-    plt.title("Fidelity vs. Noise Level in Entanglement Swapping")
-    plt.grid(True)
-    plt.savefig("Fidelity vs Noise Level in Entanglement Swapping.png")   
-
-# Main Execution
-if __name__ == "__main__":
-    simulate_network()
-
-\end{lstlisting}
-
-\begin{lstlisting}[language=Python, caption= QKD-AES application, label=code:QKD]
-
-from qutip import basis, ket2dm
-import numpy as np
-from Crypto.Cipher import AES
-from Crypto.Util.Padding import pad, unpad
-import os
-
-# Define basis states of computational basis and Hadamard basis
-zero = basis(2, 0)  # |0>
-one = basis(2, 1)   # |1>
-plus = (zero + one).unit()  # |+>
-minus = (zero - one).unit()  # |->
-
-# Alice's qubits
-def generate_bb84_states(num_qubits):
-    states = []
-    bases = []
-    for _ in range(num_qubits):
-        basis_choice = np.random.choice(['z', 'x'])
-        bit = np.random.choice([0, 1])
-        if basis_choice == 'z':
-            states.append(zero if bit == 0 else one)
-        else:
-            states.append(plus if bit == 0 else minus)
-        bases.append(basis_choice)
-    return states, bases
-
-# Measurement
-def measure_state(state, basis):
-    if basis == 'z':
-        projection = [zero, one]
-    else:  # 'x'
-        projection = [plus, minus]
-    probabilities = [abs(proj.overlap(state))**2 for proj in projection]
-    return np.random.choice([0, 1], p=probabilities)
-
-# Generate shared key
-def generate_shared_key(num_qubits):
-    alice_states, alice_bases = generate_bb84_states(num_qubits)
-    bob_bases = np.random.choice(['z', 'x'], num_qubits)
-
-    # Bob measures Alice's qubits
-    bob_results = [measure_state(state, bob_bases[i]) for i, state in enumerate(alice_states)]
-    matching_bases = [alice_bases[i] == bob_bases[i] for i in range(num_qubits)]
-    shared_key = [bob_results[i] for i in range(num_qubits) if matching_bases[i]]
-
-    # Success rate
-    success_rate = len(shared_key) / num_qubits
-    print(f"Key Exchange Success Rate: {success_rate:.2f}")
-
-    # Ensure we have a sufficiently long key for AES (128 bits = 16 bytes)
-    if len(shared_key) >= 16:
-        shared_key = shared_key[:16]
-        return bytes(shared_key), success_rate
-    else:
-        print("Not enough key bits generated. Increase number of qubits.")
-        return None, success_rate
-
-# Encrypt and decrypt messages using AES
-def encrypt_message(message, key):
-    cipher = AES.new(key, AES.MODE_CBC)  # Use AES in CBC mode
-    iv = cipher.iv
-    encrypted_message = cipher.encrypt(pad(message.encode(), AES.block_size))
-    return iv, encrypted_message
-
-def decrypt_message(iv, encrypted_message, key):
-    cipher = AES.new(key, AES.MODE_CBC, iv=iv)
-    decrypted_message = unpad(cipher.decrypt(encrypted_message), AES.block_size)
-    return decrypted_message.decode()
-
-# Main simulation
-num_qubits = 256
-success_rate = 0
-RATE = 0.57
-while(success_rate <= RATE):
-    key, success_rate = generate_shared_key(num_qubits)
-    if(success_rate < RATE):
-        print("retry key generation")
-
-if key and success_rate > RATE:  # Use the key if success rate is high enough
-    print("Shared key established:", key)
-
-    # Alice sends a message to Bob
-    alice_message = "Hello Bob!"
-    iv, encrypted_message = encrypt_message(alice_message, key)
-    print(f"Alice's encrypted message: {encrypted_message}")
-
-    # Bob decrypts the message
-    bob_message = decrypt_message(iv, encrypted_message, key)
-    print(f"Bob's decrypted message: {bob_message}")
-
-    # Bob sends a message to Alice
-    bob_message = "Hello Alice!"
-    iv, encrypted_message = encrypt_message(bob_message, key)
-    print(f"Bob's encrypted message: {encrypted_message}")
-
-    # Alice decrypts the message
-    alice_message = decrypt_message(iv, encrypted_message, key)
-    print(f"Alice's decrypted message: {alice_message}")
-else:
-    print("Failed to generate a secure shared key.")
-
-\end{lstlisting}
 
 \end{document}
