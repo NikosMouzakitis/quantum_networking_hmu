@@ -56,7 +56,7 @@ Project for\\[1cm]
 		utilizing principles of quantum mechanics such as superposition, entanglement, no-cloning theorem for addressing
 		vulnerabilities in widely adopted classical cryptographic systems, 
 		with Quantum Key Distribution (QKD) and the quantum internet standing at its core.
-		Unlike the classical systems, QKD leverages certain mechanical principles
+		Unlike the classical systems, QKD makes use of certain mechanical principles
 		from the field of quantum physics in order to theoretically guarantee unbreakable encryption schemes.
 		In the early days of its rise, quantum internet promises a global network enabling unprecedented levels of
 		secure communication, distributed quantum computing, and advanced scientific applications.
@@ -72,7 +72,7 @@ Project for\\[1cm]
         \section{Introduction}
 
 		Quantum networking stands as the next frontier in communication technology,
-		which is expected to leverage principles of quantum mechanics for
+		which is expected to be using principles of quantum mechanics for
 		achieving unprecedented levels in security, as well as in computational capability.
 		In contrast to ordinary classical networks, quantum networks rely on quantum states
 		of the likes of superposition and entanglement to achieve operations impossible for
@@ -80,8 +80,8 @@ Project for\\[1cm]
 		application areas like secure communications, where quantum key distribution (QKD) 
 		promises provable security against eavesdropping, and in distributed computing in cases 
 		where quantum nodes could collaborate to solve problems beyond the reach of classical networks.
-		In the modern world, where the requirement for global data security keeps following
-		an increasing trend, quantum networking is considered as a robust solution
+		In the modern world, where the requirement for data security keeps following
+		an increasing trend, quantum networking is considered as a  solution
 		for protecting sensitive informations.
 		Moreover, it is possible that mixed architectures combining classical and quantum network elements
 		could provide a feasible solution for the future communication systems. 
@@ -92,7 +92,7 @@ Project for\\[1cm]
 		Challenges arise although; despite the promising potential in quantum networking,
 		it faces technical and theoretical obstacles that need to be surpassed
 		in order to achieve and enable an entirely practical implementation and adoption.
-		Because of the very nature of quantum mechanichs, quantum internet is opted to utilize concepts
+		Because of the very nature of quantum mechanichs, quantum internet requires to utilize concepts
 		without classical counterparts with the likes of quantum entanglment,
 		no-cloning theorem, quantum measurement and teleportation.
 		
@@ -119,11 +119,11 @@ Project for\\[1cm]
 		quantum networking from the experimental level to real-world applications.
 
 		In this project the current state of quantum networking is explored alongside its potential applications. 
-		The introduction provides a broad overview of the field, emphasizing its importance in secure communication and presents a brief
+		The introduction provides an overview of the field, emphasizing its importance in secure communication and presents a brief
 		description of the most common terminology of quantum networking.	
 		In the related work section recent advancements in quantum networking are presented, with a focusing on technologies such as 
 		quantum key distribution, entanglement distribution, and quantum repeaters. 
-		In the combined methodology and results section, showcases examples to study the key elements of quantum networking and presents the findings
+		The combined methodology and results section, showcases examples to study the key elements of quantum networking and presents the findings
 		from a simulation-based approach utilizing QuTiP and actual deployment of programs in IBM's quantum computers from the IBMQ platform.
 		The discussion section interprets these findings in the context of existing literature, 
 		identifying both strengths and limitations of current technologies. 
@@ -163,8 +163,9 @@ Project for\\[1cm]
 		\textbf{Quantum entanglement} is the situation where two qubits become correlated
 		(called \textit{entanglement pair}) in a way that
 		any modification on the state of the first at once affect the state, and is reflected on the second qubit, 
-		without any consideration of their actual distance. Because of the no-cloning theorem, there it is not even
-		possible for a third qubit to be entangled with either of those qubits. Close tied to entanglement, the concept
+		without any consideration of their actual distance. 
+%		Because of the no-cloning theorem, there it is not even possible for a third qubit to be entangled with either of those qubits. 
+		Close tied to entanglement, the concept
 		of \textbf{quantum teleportation} is a process, in which state information of a quantum particle can be transferred
 		from one location into another without that particle beeing trasported.
 		This incident is feasible due to the entanglement.
@@ -330,7 +331,7 @@ Project for\\[1cm]
 		
 		In Van Meter et al.'s model, authors describe a layered protocol for quantum repeaters network and
 		they implement end to end entanglement distribution and different 'actions' of entanglement per layer.
-		They underlined bipartite entanglement generation using protocols and error purification techniques in between the
+		They highlighted bipartite entanglement generation using protocols and error purification techniques in between the
 		layers to achieve  high fidelity in order to support the quantum communication.
 		Similarly, in Wehner et al.'s model, the classical Internet layer names are present with the introduction
 		of abstractions that can support hardware heterogeneity and scalable entanglement generation. 
@@ -391,13 +392,18 @@ Project for\\[1cm]
 		Amer et al.\cite{amer-routing} investigated routing strategies for quantum key distribution (QKD) networks 
 		that make use of quantum repeaters and trusted nodes. 
 		Researchers proposed three different routing protocols for optimizing entanglement distribution 
-		for a grid based network. In their conclusion they underline the critical role of routing algorithm design 
+		for a grid based network. In their conclusion they point out the critical role of routing algorithm design 
 		and provides insights into how hybrid QKD networks should be optimized and the tradeoffs they face. 
+		Zhou et al.\cite{qkd-zhou} discuss the challenge of key management and security in the quantum networks, 
+		and propose a communication scheme for making sure the highest level of security by minimizing the trusted intermediate nodes.
+		They follow the classical networking graph theory for modeling the network and create multiple paths to defend against malicious actors.
+		In their conclusion, they ensure that communication stays secure unless a set of nodes that can create a cut in the network
+		becomes compromised, which would disturbe the secure communication between the end nodes.
+
 		Valls and co-authors \cite{brief-intro}, discuss quantum operations for network
 		control and present a model for multi-hop distribution of entanglement among the nodes of
 		a quantum system, functionalities that need to be efficient for the support of distributed
-		quantum systems. 
-	
+		quantum systems.
 		Van Meter et al. \cite{quantum-arch} proposed a complete architecture 
 		for a scalable unified quantum communications. They utilize a two-pass connection setup and recursive protocol
 		to allow scalability and extensibility for future internetworking
@@ -411,9 +417,11 @@ Project for\\[1cm]
 		In this way the protocol stack is splitted into Physical and Platform-Independent
 		(Hardware abstraction layer, Link layer, Network layer, Application layer).
 		A thouroughly presentation of the quantum network architecture is given by Khan et al. \cite{e-qnet}
-		where they have studied the quantum protocol stack, and underlined the functionalities of its layers, as well 
+		where they have studied the quantum protocol stack, and described the functionalities of its layers, as well 
 		as its components. In their work authors proposed E-QNET, a prototype for  created to be utilizing a layered quantum networking
 		framework.
+		
+		
 
 		In\cite{li-arch}, Li and co-authors proposed a new way of how interconnected
 		quantum nodes can communicate by adopting an OSI-like
@@ -426,7 +434,7 @@ Project for\\[1cm]
 		The different aspects among quantum and classical networks are discussed, while authors point out the use of hybrid
 		classical-quantum architectures. Quantum internet concept is also been explored by Cacciapuoti et al. \cite{net-chall-dqc}.
 		In their work the key differences among quantum and classical
-		networks ar underlined, and point out quantum teleportation as the most fundamental method of transporting 
+		networks are explored, and point out quantum teleportation as the most fundamental method of transporting 
 		informations in a quantum system. Authors proposed a framework for tackling the challenges of a quantum
 		network creation as well as emphasizing on the need to address problems like decoherence for enchancing the
 		reliability these networks. The key role of quantum teleportation is also discussed in \cite{entagl-classic},
@@ -461,7 +469,18 @@ Project for\\[1cm]
 		desribing the entanglement distribution were able to quantify and measure the gain for the average fidelity of the entanglments
 		using quantum switches.
 	
-				
+	
+
+		%interoperability
+		Djordjevic\cite{cvdv} propose a hybrid quantum network architecture which aims to combine two different approaches
+		on quantum communication, discrete variable (DV) and continuous variable (CV) systems. 
+		In DV Networks information is encoded in discrete quantum states, which is an analogy of a digital side for quantum technology.
+		However, DV signals are vulnerable to losses over long distances. In contrast, in CV Networks properties of continuous elements are used,
+		such as the intensity or phase of a laser beam for information encoding(numbers belonging in a real "continuous" set). 
+		This is more useful for long distance communications as it can handle better photon losses, but CV systems are less compatible with quantum computation
+		which is DV encoding based. In this work the challenge of creating a quantum internet as a merge of these two approaches in an
+		hybrid interoperable way is attempted.
+
 		%other appliances-powergrid to cite.
 		Many fields have the potential to be benefited by a complete quantum networking architecture, 
 		such the field of ultra scalable analytics. Quantum computing utilization can transform completely
@@ -503,7 +522,7 @@ Project for\\[1cm]
 		alongside two entities, over a potenitally insecure medium/channel
 		by using principles of quantum mechanics.
 		
-		In this simulation (code is in Listing 1 of Appendix A),
+		In this simulation (code is in Listing 1 of Appendix),
 		two entities entitled Alice and Bob, execute the QDK using the BB84 protocol
 		in order to share a secret key over a potentially non-secure medium. Initially Alice creates
 		a number of qubits (100 in this example) randomly in one of the two possible bases (either 'x' or 'z') and sends them 
@@ -518,7 +537,7 @@ Project for\\[1cm]
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.7\textwidth]{bb84/success_rate_terminal.png}
-			\caption{Execution of code of Listing 1 of Appendix A.}
+			\caption{Execution of code of Listing 1 of Appendix.}
 			\label{fig1:}
 		\end{figure}		
 
@@ -545,7 +564,7 @@ Project for\\[1cm]
 
 		\subsection{QKD application using AES for classic communication}
 
-		In the Listing 3 of Appendix A, building on the previous example of generating a key,
+		In the Listing 3 of Appendix, building on the previous example of generating a key,
 		we extend the functionality in encrypted message exchanges among two entities, using the secret key created
 		by the QKD for a symmetric encryption algorithm (in this case AES). 
 		Also a limit on the success rate of the key generation is implemented,
@@ -566,7 +585,7 @@ Project for\\[1cm]
 
 		\subsection{Fidelity against Noise Level}	
 		
-		In this simulation (code is in Listing 2 of Appendix A), a model of a quantum repeater network with
+		In this simulation (code is in Listing 2 of Appendix), a model of a quantum repeater network with
 		entanglement swapping is created in order to observe how the fidelity of the final entangled state is
 		affected by depolarizing noise \cite{depolarization}. Depolarizing noise is a quantum noise which models the
 		coherence loss in quantum system's states because of imperfections in quantum operations.
@@ -700,10 +719,9 @@ Project for\\[1cm]
 
 		\subsection{Quantum Error Correction}
 		
-		In this example, we have implemented the 3-qubit bit-flip code to demonstrate error correction in
+		In this example, we have implemented the 3-qubit bit-flip code to demonstrate single-error correction in
 		quantum circuits.
-		
-		In order to achieve the error correction, 3 physical qubits are encoding one logical cubit.
+		In order to achieve the error correction, 3 physical qubits are encoding one logical qubit.
 		For example 
 		
 			\[
@@ -748,7 +766,7 @@ Project for\\[1cm]
 		We take two measurements on the classical 2 bit register named \textit{syndrome}.
 		As we can observe in Figure 14, all registers are showing 1's on probabilities, therefore
 		\textit{syndrome} = 11, meaning as expected(because of the forced flip) 
-		that both comparissons of the qubit pairs disagree.
+		that both comparissons of the qubit pairs disagree and flip occured into q[1].
 
 		\begin{figure}[H]
 			\centering
@@ -758,33 +776,99 @@ Project for\\[1cm]
 		\end{figure}		
 
 
+		\begin{table}[ht]
+		\centering
+		\caption{Syndrome error locations}
+		\label{tab:syndrome}
+		\begin{tabular}{|c|l|}
+		\hline
+		\textbf{Syndrome (s[1]s[0])} & \textbf{Error Location} \\ 
+		\hline
+		00 & No error detected \\
+		01 & Error in q2 \\
+		10 & Error in q0 \\
+		11 & Error in q1 \\
+		\hline
+		\end{tabular}
+		\end{table}	
 
-
-
-		The implemented circuit is presented in Figure 12, where initially 
-
+		Based on the value on the syndrome register, error correction can applied afterwards conditionally and values to be
+		checked are {1,2,3}.
+		Correction applied as seen in Figure 15,
+		Note that in the probabilities we have a 100\% assurance that register \textit{result} should be '111'.
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.6\textwidth]{ibmq/3bitcirc.png}
-			\caption{Circuit for performing error correction scheme.}
-			\label{fig12:}
+			\includegraphics[width=0.5\textwidth]{ibmq/correction_circ.png}
+			\caption{Correction logic for the circuit based on syndrome results.}
+			\label{fig15:}
 		\end{figure}		
 		
+
+		After deploying the circuit and run it for 1024 shots, on a real quantum processor offered by
+		IBM, we can inspect, on the left-side of the screen that '111' was the value with the greatest probability
+		of occurance for the register \textit{results} although, existing errors are observed again and differentiates the
+		actual result from the simulation expected one.
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.7\textwidth]{ibmq/3bitibmq.png}
-			\caption{Circuit on IBMQ for correction scheme.}
-			\label{fig13:}
+			\includegraphics[width=0.6\textwidth]{ibmq/result_correction.png}
+			\caption{Correction results running on IBMQ quantum processor.}
+			\label{fig15:}
 		\end{figure}		
-	
-
-
-
+		
+		The auto-generated Qiskit code for the 3 qubit single bit flip error correection code is presented on
+		Appenix A's Listing 4.
 
 	\section{Discussion}
-	asdsdfsd
-	\section{Conclusion}
-	dsdfsdf
+	
+
+	The simulations and experiments presented in the previous section can provide insights into the practical implementation 
+	of quantum networking protocols and the challenges arising by the real world quantum hardware. 
+
+	\textit{1. BB84 protocol}
+	\newline
+	The convergence of the BB84 protocol’s success rate to ~50\% (Figure 3) agrees with the theoretic probability 
+	of Alice and Bob of choosing matching bases. 
+	In practical deployments, increasing the number of qubits ensures a longer secret key, 
+	although that will demand also increased error corrections to tackle losses and ensure higher fidelities and keeping stable the entanglements.
+	
+
+	\textit{2. QKD-AES example}
+	\newline
+	The integration of QKD with AES (Figure 4) demonstrates the hybrid approach of secure communication, 
+	after having established a secret key among the entities with a threshold rate.
+	In real-world scenarios, dynamic threshold adjustments on the success rate could be implemented to
+	optimize performance under varying network environments. 
+	
+
+\textit{3. Fidelity Degradation in Noisy Quantum Repeaters}
+	\newline
+	The relationship between depolarizing noise and fidelity appearing in the graph(Figure 6) denotes the challenge of long distance quantum networks. 
+	In any case, fidelity never should drop below 0.5, rendering the entangled states unsuitable for quantum protocols. 
+	This emphasizes the need for having available low noise repeaters,
+	deployment of error correction and entanglement purification schemes in order to keep fidelity in desired high levels.
+
+\textit{4. Entanglement Swapping on Real Quantum Hardware}
+	\newline
+	The entanglement swapping experiments (Figures 7–11) shows the differences from theoretic expectations and what real device outputs. 
+	While simulations (Figures 7–9) can show perfect entanglement, IBM Quantum results (Figures 10–11) experience some decoherence errors 
+	(f.e, unexpected states like (01),(01)), highlighting some limitations and deviation from the ideal measurement on current devices. 
+	These errors arise from gate imperfections and readout errors, and shows the need of more advanced error tackling techniques.
+
+\textit{5. Quantum Error Correction on Real Hardware}
+	\newline
+	The 3-qubit bit flip code (Figures 12–15) successfully corrected single-qubit errors in simulation 
+	but showed some errors on IBMQ hardware. 
+	The percentage of success rate of the experiment(Figure 15) reflects the effects of gate and readout errors. 
+	Also in order to be able of detecting flips on more than a single qubit, 
+	larger quantum circuits are required(5-qubit or 9-qubit) which also introduces
+	more gate-related noise on the circuit.
+
+\section{Conclusion}
+
+	In this project we have explored quantum networking protocols like BB84 and entanglement swapping while introduced to hardware 
+	limitations of the current available quantum processors. 
+	As quantum hardware keeps maturing with combination of better and more efficient error corrections, low-noise repeaters, 
+	and hybrid quantum-classical systems, the path will lead into more secure quantum networks and a complete architecture.
 
 \newpage
 \bibliographystyle{plain}
@@ -1058,6 +1142,32 @@ if key and success_rate > RATE:  # Use the key if success rate is high enough
 else:
     print("Failed to generate a secure shared key.")
 
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, caption= 3 qubit single bit flip error correction circuit, label=code:QKD]
+from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
+from numpy import pi
+qreg_q = QuantumRegister(5, 'q')
+creg_syndrome = ClassicalRegister(2, 'syndrome')
+creg_result = ClassicalRegister(3, 'result')
+circuit = QuantumCircuit(qreg_q, creg_syndrome, creg_result)
+circuit.x(qreg_q[0])
+circuit.cx(qreg_q[0], qreg_q[1])
+circuit.cx(qreg_q[0], qreg_q[2])
+circuit.x(qreg_q[1])
+circuit.cx(qreg_q[0], qreg_q[3])
+circuit.cx(qreg_q[1], qreg_q[3])
+circuit.cx(qreg_q[1], qreg_q[4])
+circuit.measure(qreg_q[3], creg_syndrome[0])
+circuit.cx(qreg_q[2], qreg_q[4])
+circuit.measure(qreg_q[4], creg_syndrome[1])
+circuit.x(qreg_q[0]).c_if(creg_syndrome, 2)
+circuit.x(qreg_q[1]).c_if(creg_syndrome, 3)
+circuit.x(qreg_q[2]).c_if(creg_syndrome, 1)
+circuit.measure(qreg_q[0], creg_result[0])
+circuit.measure(qreg_q[1], creg_result[1])
+circuit.measure(qreg_q[2], creg_result[2])
+# @columns [0,1,2,4,6,8,10,12,14,15,17,18,19,20,21,22]
 \end{lstlisting}
 
 \end{document}
