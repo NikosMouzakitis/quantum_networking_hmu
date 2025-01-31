@@ -52,17 +52,19 @@ Project for\\[1cm]
 	\begin{abstract}
 	%\addcontentsline{toc} {chapter} {Abstract}
 
-		Quantum networking represents a transformative advancement in secure communication,
-		utilizing principles of quantum mechanics such as superposition, entanglement, no-cloning theorem for addressing
-		vulnerabilities in widely adopted classical cryptographic systems, 
-		with Quantum Key Distribution (QKD) and the quantum internet standing at its core.
-		Unlike the classical systems, QKD makes use of certain mechanical principles
+		A new advancement in secure communications, is the quantum networking,
+		which uses quantum mechanical principles like superposition, entanglement and no-cloning 
+		theorem for tackling existing vulnerabilities in widely adopted classical crypto-systems, 
+		with Quantum Key Distribution (QKD) and the quantum internet(QI) standing at its core.
+		In contrast to classical methods, QKD makes use of certain principles
 		from the field of quantum physics in order to theoretically guarantee unbreakable encryption schemes.
-		In the early days of its rise, quantum internet promises a global network enabling unprecedented levels of
+		In the early days of QI's rise, it promises a global network having the highest level of
 		secure communication, distributed quantum computing, and advanced scientific applications.
-		Despite the progress, scalability remains a main bottleneck, alongside with the issues that leads into this scalability challenge. 
-		Current quantum networks are constrained because of photon loss in fiber optic mediums, quantum gate losses and noise to quantum states
-		are very fragile. All these behaviors introduce diffuculties for scaling quantum systems.
+		Despite the progress, scalability remains the main issue, alongside with the rest of problems that leads 
+		into this scalability challenge. 
+		Current quantum networks are constrained because of photon loss
+		in fiber optic mediums, quantum gates losses and noise, to which the quantum states
+		are very fragile. All these behaviors are diffuculties for the scaling of quantum systems.
 		In this project the current state of quantum networking is explored and simulations using QuTiP or
 		experimental deployments on IBM’s quantum computers (IBMQ) are presented to study entanglement distribution,
 		quantum teleportation, quantum state error correction and hybrid quantum-classical network communication.
@@ -71,29 +73,29 @@ Project for\\[1cm]
 	
         \section{Introduction}
 
-		Quantum networking stands as the next frontier in communication technology,
+		Quantum networking is the next frontier in communication technology,
 		which is expected to be using principles of quantum mechanics for
-		achieving unprecedented levels in security, as well as in computational capability.
+		achieving much better levels in security, as well as in computational capability.
 		In contrast to ordinary classical networks, quantum networks rely on quantum states
-		of the likes of superposition and entanglement to achieve operations impossible for
-	        the classic networking schemes. These attributes become of vital importance in 
+		and their properties like superposition and entanglement to achieve operations impossible for
+	        the classic networking schemes. These elements are of high importance in 
 		application areas like secure communications, where quantum key distribution (QKD) 
 		promises provable security against eavesdropping, and in distributed computing in cases 
-		where quantum nodes could collaborate to solve problems beyond the reach of classical networks.
+		where quantum nodes could collaborate for solving problems beyond the reach of classical networks.
 		In the modern world, where the requirement for data security keeps following
 		an increasing trend, quantum networking is considered as a  solution
 		for protecting sensitive informations.
-		Moreover, it is possible that mixed architectures combining classical and quantum network elements
+		Additionally, it is possible that mixed architectures combining classical and quantum network elements
 		could provide a feasible solution for the future communication systems. 
-		To define the structure and complete functionality of the future quantum internet,
+		To define the structure and complete functionality of the future QI,
 		a complete network stack is required to be created starting from the beginning utilizing 
 		the features of quantum entanglement\cite{rfc}.
 
-		Challenges arise although; despite the promising potential in quantum networking,
-		it faces technical and theoretical obstacles that need to be surpassed
-		in order to achieve and enable an entirely practical implementation and adoption.
-		Because of the very nature of quantum mechanichs, quantum internet requires to utilize concepts
-		without classical counterparts with the likes of quantum entanglment,
+		Challenges exist although; despite all of the promising potential of quantum networking,
+		technical and theoretical barriers that need to be overcomed
+		to achieve and enable an entirely practical implementation and adoption.
+		Because of the very nature of quantum states, QI requires to 
+		utilize concepts without classical counterparts with the likes of quantum entanglment,
 		no-cloning theorem, quantum measurement and teleportation.
 		
 		In contrast to the classical and well known model of computation experienced so far,
@@ -102,16 +104,16 @@ Project for\\[1cm]
 		
 		The scalability remains one of the main issues,
 		as current quantum networks are limited in the number of nodes and the
-		distances they can span without degradation.
+		distances they can span without degradation(entanglement fidelity issue).
 		This limitation comes from the fragile nature of the quantum states,
 		which are very sensitive on environmental noise and decoherence especially over long distances.
-		As a countermeassure, in order to avoid these limitations the development of reliable quantum repeaters
+		As a countermeassure, in order to avoid these limitations, the development of reliable quantum repeaters
 		and advanced error-correction schemes are required.	
 		Additionally, the efficient generation, distribution and storage of entanglement 
-		across a network has its difficulties and limitations that are required to be surpassed, 
+		across a network has its difficulties and limitations that are required to be overcomed, 
 		as maintaining a high fidelity value in entangled
 		states is necessary for a complete and functioning network.
-		In the end, another challenge lies in integration
+		In the end, another challenge exists in integration
 	        quantum systems with the classic infrastructure,
 	        which requires coordination between
 	        two different operational paradigms.
@@ -127,12 +129,15 @@ Project for\\[1cm]
 		from a simulation-based approach utilizing QuTiP and actual deployment of programs in IBM's quantum computers from the IBMQ platform.
 		The discussion section interprets these findings in the context of existing literature, 
 		identifying both strengths and limitations of current technologies. 
-		In the end, the conclusion section summarizes the project's work.
+		In the end, follows the conclusion section, references and the code used in the presented experiments of 
+		methodology and result section.
 
 
 		\subsection{A brief description of the most common terms in quantum networking}
 
-		A \textbf{quantum network} consists of a set of quantum processors/devices connected to each other. \textbf{Qubits} can be particles such as photons
+		A \textbf{quantum network} consists of a set of quantum processors/devices connected to each other.
+		The counterpart of a classical bit, in quantum computing context is the qubit.
+		\textbf{Qubits} can be particles such as photons
 		or electrons, carrying certain properties derived from quantum mechanics called \textit{state}. A state's can express the spin of an electron or
 		a photon's polarization. The particular state of a qubit is unknown prior to its measurement, since it is in a 
 		superposition (\textit{as an analogy one can think the linear combination of two variables)} of states.
@@ -185,32 +190,30 @@ Project for\\[1cm]
 
 		\subsection{QKD}
 
-		Quantum Key Distribution (QKD) is a revolutionary method for securely exchanging cryptographic keys between two distant parties\cite{powergrid}, 
+		Quantum Key Distribution (QKD) is a method for securely exchanging cryptographic keys between two distant parties\cite{powergrid}, 
 		commonly referred to as Alice (the sender) and Bob (the receiver). 
 		It utilizes the principles of quantum mechanics domain in order to ensure the security of the key distribution operation. 
 		QKD's main goal is to enable the two parties to establish a shared, secret cryptographic key, 
 		which can then be used to encrypt and decrypt messages using traditional cryptographical schemes, such as symmetric encryption algorithms.
 
-		One of the main differenes that differentiates QKD from other cryptographic schemes, 
-		is its reliance on two communication channels: 
-		a quantum channel and a classical channel. 
-		The quantum channel is used to transmit quantum bits or qubits, 
-		which are the fundamental units of quantum information. 
-		These qubits are usually encoded as quantum states of particles, for example as photons. 
+		One of the main differenes of QKD and other cryptographic schemes, 
+		is that it uses two communication channels: 
+		a quantum and a classical one. 
+		The quantum channel is used to transmit qubits.
+		These qubits are usually encoded as quantum states of particles. 
 		The quantum channel ensures the secure transmission of the qubits because, 
 		according to the no-cloning theorem and 
 		Heisenberg's principle of uncertainty, 
 		any interception or measurement of these quantum states 
 		will unreversibly disturb the system, revealing the presence of a malicious actor(adversary).
-
-		On the other hand, the classical channel is used for the transmission of classic information 
-		that does not relates to quantum information but plays vital role for the key establishment process.
+		On the other hand, the classical channel is used for sending classic information 
+		and plays also role for the key establishment process.
 		When the qubits are exchanged via the quantum channel, Alice and Bob communicate using the classical channel
-		to perform the next steps, such as error correction, privacy amplification, and sifting. 
+		to perform the next steps, such as error correction and sifting. Sifting is the most important part, since there 
+		Alice sends the bases used for measuring her qubits, and Bob will only keep as valid qubits for the shared key, only the
+		qubits he measured using the same basis as Alice.
 		These processes guarantees that noise introduced during the transmission is considered 
-		and that they both agree on a shared key.
-		The classical channel also helps into validating the integrity of the key exchange
-		and for other parameters, such as the measurement bases in some QKD protocols.
+		and that they both agree on a shared key after sifting has been performed.
 
 		The core components on which QKD is based, are the concepts of quantum entanglement and superposition,
 		which makes possible the secure transfer of information. 
@@ -224,28 +227,33 @@ Project for\\[1cm]
 		shared key without being detected. This statement highlights the difference with traditional cryptographic methods, and 
 		someone could argue that QKD its secure by the foundations of the "ingredients" its made of.
 
-		As for the challenges that QKD has to surpass, quantum channels typically have limitations in terms of distance and reliability.
-		As a solution, quantum repeaters and quantum relays have been introduced for extending the range of QKD. 
-		These devices would allow entanglement to be distributed over longer distances, 
-		enabling the construction of a desired quantum internet where secure communication can take place over large scale networks.
+		As for the challenges that QKD has to face, quantum channels typically have limitations in 
+		terms of distance and reliability.
+		As a solution, quantum repeaters and quantum relays have been 
+		introduced for extending the range of QKD. 
+		These devices would allow entanglement to be distributed 
+		over longer distances, 
+		enabling the construction of a desired QI where secure communication 
+		can take place over large scale networks.
 
 		In general, QKD is an core building block of quantum cryptography,
 		providing a secure way for establishing shared secret keys. 
-		By using the principles of quantum mechanics, QKD enables secure communication that is 
-		information-theoretic secure. While it still faces some practical challenges, QKD holds high expectations for the 
+		By using quantum mechanics, QKD enables secure communication that is 
+		information-theoretic secure. While it still faces some practical challenges, 
+		QKD holds high expectations for the 
 		future of secure communications.
 
 		\subsection{Quantum Repeaters}
 		
 		Quantum repeaters are devices which are designed to extend the range of quantum communication networks. They 
-		are required to enable QKD in long distances and for supporting the construction of a future quantum internet.
+		are required to enable QKD in long distances and for supporting the construction of a future QI.
 		In the classical way of communication, the repeaters are used in order to amplify signals 
 		for avoiding signal loss, but due to the no-cloning theorem which prohibits duplication of quantum states,
 		this is not applicable on quantum communication. So a quantum repeater in constrast, utilizes entanglement distribution 
 		and error correction schemes to achieve the establishment of a quantum connection over long distance.
 		The main issues that quantum repeaters address are the following:
 
-		\textbf{a)} Photon Loss (Attenuation):
+		\textbf{a)} Photon loss:
 		In fact, quantum repeaters can help to tackle the loss in fiber-based quantum communication,
 		where the photons who carry quantum information experience loss inside the medium by propagation. 
 		This limits the range of QKD to about tens of kilometers \cite{repeater1}. 
@@ -260,14 +268,14 @@ Project for\\[1cm]
 		temporarily, allowing processes such as error correction or entanglement purification to maintain 
 		the quality of the entanglement.
 		
-		\textbf{c)} Scalability of Quantum Networks:
+		\textbf{c)} Scalability:
 		Without using repeaters, quantum networks have to be limited small local areas due to the
 		constraints of photon transmission.
 		Quantum repeaters can enable a scalable construction 
 		of larger quantum networks by bridging long distances using segmented 
 		paths with entangled pairs connecting multiple nodes.
 		
-		\textbf{d)} Error Accumulation:
+		\textbf{d)} Error accumulation:
 		In quantum communications, errors tend to accumulate over long distances
 		and the classical error correction schemes are not applicable for the quantum states.
 		Quantum repeaters integrate error correction protocols like entanglement purification
@@ -320,7 +328,7 @@ Project for\\[1cm]
 
 		\subsection{Proposed Quantum OSI-like Models}
 		
-		Quantum Internet(QI) architecture research has been studied and lead into several OSI-like protocol 
+		QI architecture research has been studied and lead into several OSI-like protocol 
 		stack models, where the common aspect of all has been the exploitation of
 		quantum entanglement. Entanglement have been considered to be the key part for communication. 
 		These models, such as proposed by Van Meter et al.\cite{quantum-arch}, 
@@ -341,7 +349,7 @@ Project for\\[1cm]
 		which can support long range entanglement distribution by utilizing dynamic and adaptive network steps. 
 		As we can inspect there is a diversity of ways for the proposed models, having single-pair entanglement, 
 		multi-party sharing of entanglement and advanced graph structures, competing for the model to be used
-		in the quantum Internet network stack.
+		in the QI network stack.
 
 		As for the main network entities of the quantum networking paradigm\cite{e-qnet} are presented in Table 1.1.
 
@@ -388,7 +396,7 @@ Project for\\[1cm]
 		In their work the key advancements and challenges in the
 		development of quantum networks have been discussed while in addition
 		explored the integration of the quantum key distribution (QKD)
-		and presented a broader vision for the quantum internet.
+		and presented a broader vision for the QI.
 		Amer et al.\cite{amer-routing} investigated routing strategies for quantum key distribution (QKD) networks 
 		that make use of quantum repeaters and trusted nodes. 
 		Researchers proposed three different routing protocols for optimizing entanglement distribution 
@@ -418,7 +426,7 @@ Project for\\[1cm]
 		(Hardware abstraction layer, Link layer, Network layer, Application layer).
 		A thouroughly presentation of the quantum network architecture is given by Khan et al. \cite{e-qnet}
 		where they have studied the quantum protocol stack, and described the functionalities of its layers, as well 
-		as its components. In their work authors proposed E-QNET, a prototype for  created to be utilizing a layered quantum networking
+		as its components. In their work authors proposed E-QNET, a prototype created utilizing a layered quantum networking
 		framework.
 		
 		
@@ -430,9 +438,9 @@ Project for\\[1cm]
 		QLANs are interconnected via intermediate quantum repeaters, and they can also be designed and deployed in
 		a hierarchical fashion.
 		Kozlowski et al. \cite{rfc} focus on presenting the architectural foundations required in order to
-		realize the quantum internet, strongly proposing the incorporation of quantum entanglement and Bell pairs for quantum networks. 
+		realize the QI, strongly proposing the incorporation of quantum entanglement and Bell pairs for quantum networks. 
 		The different aspects among quantum and classical networks are discussed, while authors point out the use of hybrid
-		classical-quantum architectures. Quantum internet concept is also been explored by Cacciapuoti et al. \cite{net-chall-dqc}.
+		classical-quantum architectures. QI concept is also been explored by Cacciapuoti et al. \cite{net-chall-dqc}.
 		In their work the key differences among quantum and classical
 		networks are explored, and point out quantum teleportation as the most fundamental method of transporting 
 		informations in a quantum system. Authors proposed a framework for tackling the challenges of a quantum
@@ -458,7 +466,7 @@ Project for\\[1cm]
 		are based on light particles(photons) for the transfer of quantum information.
 		Authors in \cite{repeater1} propose an all photonic quantum repeater 
 		based on RGS (repeater graph states) achieving a higher repetition rate compared to traditional quantum repeaters, and does not require 
-		the use of quantum memories. Their proposed scheme offers a fast Bell pair generation ration with only
+		the use of quantum memories. Their proposed scheme offers a fast Bell pair generation ratio with only
 		limitation the time required for the creation of the repeater graph state. 
 		As per quantum memories, in their work Bhaskar et al. \cite{memories}, demonstrated a quantum memory node, which
 		was integrated into a nanophotonic resonator. Their memory node, was able to perform asynchronous Bell-state measurements
@@ -478,7 +486,7 @@ Project for\\[1cm]
 		However, DV signals are vulnerable to losses over long distances. In contrast, in CV Networks properties of continuous elements are used,
 		such as the intensity or phase of a laser beam for information encoding(numbers belonging in a real "continuous" set). 
 		This is more useful for long distance communications as it can handle better photon losses, but CV systems are less compatible with quantum computation
-		which is DV encoding based. In this work the challenge of creating a quantum internet as a merge of these two approaches in an
+		which is DV encoding based. In this work the challenge of creating a QI as a merge of these two approaches in an
 		hybrid interoperable way is attempted.
 
 		%other appliances-powergrid to cite.
@@ -493,11 +501,11 @@ Project for\\[1cm]
 		for secure communication in the field of IIoT and explore the integration of quantum networking and digital twins in order
 		to enlight how can the virtual models interact through quantum communication channels.
 		Borgianni et al.\cite{space} proposed a hybrid architecture (quantum and classical) for the space exploration domain. 
-		By utilization of terrestrial and non terrestrial quantum networks (QNs), 
+		By utilization of terrestrial and non terrestrial quantum networks, 
 		in their proposed framework making use of quantum entanglement and QKD in order to achieve secure,
 		high-fidelity communication between Earth and spacecraft. 
 		Authors give emphasis on the role of Free Space Optical links and SDN for achiving the 
-		bridge alongside quantum and classical systems
+		bridge alongside quantum and classical systems.
 
 	\section{Methodology and Results}
 		
@@ -572,8 +580,8 @@ Project for\\[1cm]
 		generation restarts. In this example 256 qubits were selected with success rate to be above 0.58.
 		The execution of the simulation is presented on Figure 4, one message is sent by each entity simulating
 		an encrypted ping-pong among them. In a real application we could have implemented 
-		other features as well such as a key lifetime(how often the AES key should be refreshed)
-		authentication between the entities start the QKD process and error correction as it would be required.
+		other features as well such as a key lifetime(how often the AES key should be refreshed) in the case that
+		their communication was continuous for longer time.
 		
 		\begin{figure}[H]
 			\centering
@@ -828,8 +836,7 @@ Project for\\[1cm]
 	\newline
 	The convergence of the BB84 protocol’s success rate to ~50\% (Figure 3) agrees with the theoretic probability 
 	of Alice and Bob of choosing matching bases. 
-	In practical deployments, increasing the number of qubits ensures a longer secret key, 
-	although that will demand also increased error corrections to tackle losses and ensure higher fidelities and keeping stable the entanglements.
+	In practical deployments, increasing the number of qubits will result in a longer secret key.
 	
 
 	\textit{2. QKD-AES example}
@@ -867,8 +874,8 @@ Project for\\[1cm]
 
 	In this project we have explored quantum networking protocols like BB84 and entanglement swapping while introduced to hardware 
 	limitations of the current available quantum processors. 
-	As quantum hardware keeps maturing with combination of better and more efficient error corrections, low-noise repeaters, 
-	and hybrid quantum-classical systems, the path will lead into more secure quantum networks and a complete architecture.
+	As quantum communication technology keeps evolving with combination of better and more efficient error corrections, low-noise repeaters, 
+	and hybrid quantum-classical systems, the path will open to lead into more secure quantum networks and a complete architecture.
 
 \newpage
 \bibliographystyle{plain}
