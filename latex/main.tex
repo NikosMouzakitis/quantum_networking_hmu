@@ -138,7 +138,7 @@ Project for\\[1cm]
 		A \textbf{quantum network} consists of a set of quantum processors/devices connected to each other.
 		The counterpart of a classical bit, in quantum computing context is the qubit.
 		\textbf{Qubits} can be particles such as photons
-		or electrons, carrying certain properties derived from quantum mechanics called \textit{state}. A state's can express the spin of an electron or
+		or electrons, carrying certain properties derived from quantum mechanics called \textit{state}. A state can express the spin of an electron or
 		a photon's polarization. The particular state of a qubit is unknown prior to its measurement, since it is in a 
 		superposition (\textit{as an analogy one can think the linear combination of two variables)} of states.
 		After its measurement the qubit collapses in one state, which actually can not be determined
@@ -482,8 +482,8 @@ Project for\\[1cm]
 		%interoperability
 		Djordjevic\cite{cvdv} propose a hybrid quantum network architecture which aims to combine two different approaches
 		on quantum communication, discrete variable (DV) and continuous variable (CV) systems. 
-		In DV Networks information is encoded in discrete quantum states, which is an analogy of a digital side for quantum technology.
-		However, DV signals are vulnerable to losses over long distances. In contrast, in CV Networks properties of continuous elements are used,
+		In DV networks information is encoded in discrete quantum states, which is an analogy of a digital side for quantum technology.
+		However, DV signals are vulnerable to losses over long distances. In contrast, in CV networks properties of continuous elements are used,
 		such as the intensity or phase of a laser beam for information encoding(numbers belonging in a real "continuous" set). 
 		This is more useful for long distance communications as it can handle better photon losses, but CV systems are less compatible with quantum computation
 		which is DV encoding based. In this work the challenge of creating a QI as a merge of these two approaches in an
@@ -505,7 +505,13 @@ Project for\\[1cm]
 		in their proposed framework making use of quantum entanglement and QKD in order to achieve secure,
 		high-fidelity communication between Earth and spacecraft. 
 		Authors give emphasis on the role of Free Space Optical links and SDN for achiving the 
-		bridge alongside quantum and classical systems.
+		bridge alongside quantum and classical systems. 
+		Another domain which will benefit from the development of quantum networking is Blind Quantum Computing,
+		which can enable a client-server alike communication in way where data, algorithms and results from computations remain
+		disclosed \cite{cisco}. Additionally it could help on the creation of higher precision of clocks, connected via quantum networks
+		providing increased accuracy compared to the current used ones. Better accuracy can also be achieved by utilizing the these networks
+		for distributed sensing applications, resulting in more precise measurements than classical counterparts provide.
+		
 
 	\section{Methodology and Results}
 		
@@ -625,7 +631,7 @@ Project for\\[1cm]
 		entangled in Bell1(Bell state 1) and q4 (node C) and q3 (node B) are entangled in Bell2(Bell state 2).
 		Node A and Node C, could create these entangled pairs and sent 1 qubit each into the intermediate
 		Node B. The BSM(measurement) occurs in Node B, and as a consequence the initial entanglement between
-		q3 and q4 qubits is destructed \cite{rfc}. Nevertheless the state of q2 is "recreated"/reappears in the possition
+		q3 and q4 qubits is destructed \cite{rfc}. Nevertheless the state of q2 is "recreated"/reappears in the position
 		of qubit q4, which makes an new entanglement pair consisting of qubits (q1,q4).
 
 		Depending on the application requirements, the results of the BSM might be communicated to the Node C, in order
@@ -824,10 +830,38 @@ Project for\\[1cm]
 		\end{figure}		
 		
 		The auto-generated Qiskit code for the 3 qubit single bit flip error correection code is presented on
-		Appenix A's Listing 4.
+		Appenix's Listing 4.
+
+		\subsection{A demonstration of eavedropping detection on BB84}
+		
+		Using Qutip for the BB84 implementation as in the previous examples, and
+		\textit{streamlit} (an open source Python library that allows the creation of interactive web-based Python programs)
+		an example of detecting eavesdropping for the BB84 application is presented. 
+		
+		As we can observe in Figure 17, Bob selects random the bases to measure the qubits that Alice sent to him.
+		They differ only on the selection of the 3rd base, so the secret key has to be consisting of positions: 1,2,4 and 5.
+		As we can observe though, they end up having different values for the 4th position.
+		This implies that eavesdropping occured	(Eve measured the 4th qubit in a different base, therefore it collapsed in a "wrong" state)
+		in the tramsittion and it can be detected in this demo after comparing one-to-one the secret keys of the two entities.
+
+		In a real-world's scenario, we would not like to share and transmit the secret keys for performing this check. In such a case
+		the two entities could exchange some messages by encrypting some predefined strings using their generated secret keys
+		and determine in this way if eavesdropping has occured or not.
+		
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.8\textwidth]{bb84/inter_demo.png}
+			\caption{Demo for eavesdropping detection on BB84.}
+			\label{fig16:}
+		\end{figure}		
+		
+		The code for this demonstration is on the last listing of the Appendix. We should note that
+		the detection can happen when the interceptor chooses a different base to measure a qubit than the matching base of the two entities.
+		In an extreme edge case, where the interceptor uses the exactly the same bases for measuring the qubits as the two entities(Bob and Alice)
+		detection is not possible.
 
 	\section{Discussion}
-	
 
 	The simulations and experiments presented in the previous section can provide insights into the practical implementation 
 	of quantum networking protocols and the challenges arising by the real world quantum hardware. 
@@ -847,28 +881,35 @@ Project for\\[1cm]
 	optimize performance under varying network environments. 
 	
 
-\textit{3. Fidelity Degradation in Noisy Quantum Repeaters}
+\textit{3. Fidelity Degradation}
 	\newline
 	The relationship between depolarizing noise and fidelity appearing in the graph(Figure 6) denotes the challenge of long distance quantum networks. 
 	In any case, fidelity never should drop below 0.5, rendering the entangled states unsuitable for quantum protocols. 
 	This emphasizes the need for having available low noise repeaters,
 	deployment of error correction and entanglement purification schemes in order to keep fidelity in desired high levels.
 
-\textit{4. Entanglement Swapping on Real Quantum Hardware}
+\textit{4. Entanglement Swapping on IBMQ}
 	\newline
 	The entanglement swapping experiments (Figures 7–11) shows the differences from theoretic expectations and what real device outputs. 
 	While simulations (Figures 7–9) can show perfect entanglement, IBM Quantum results (Figures 10–11) experience some decoherence errors 
 	(f.e, unexpected states like (01),(01)), highlighting some limitations and deviation from the ideal measurement on current devices. 
 	These errors arise from gate imperfections and readout errors, and shows the need of more advanced error tackling techniques.
 
-\textit{5. Quantum Error Correction on Real Hardware}
+\textit{5. Quantum Error Correction on IBMQ}
 	\newline
-	The 3-qubit bit flip code (Figures 12–15) successfully corrected single-qubit errors in simulation 
+	The 3-qubit bit flip code (Figures 12–16) successfully corrected single-qubit errors in simulation 
 	but showed some errors on IBMQ hardware. 
-	The percentage of success rate of the experiment(Figure 15) reflects the effects of gate and readout errors. 
+	The percentage of success rate of the experiment(Figure 16) reflects the effects of gate and readout errors. 
 	Also in order to be able of detecting flips on more than a single qubit, 
 	larger quantum circuits are required(5-qubit or 9-qubit) which also introduces
 	more gate-related noise on the circuit.
+
+
+\textit{6. A demonstration of eavedropping detection on BB84}
+	\newline
+	In this demonstration, the eavesdropping detection on the BB84 is explored using a simple example with only 5 qubits.
+	It visualizes the bases selected by both entities and explains how an interceptor can be detected upon comparing the final
+	generated secret key between the two communicating entities on QDK using the BB84 algorithm.
 
 \section{Conclusion}
 
@@ -1175,6 +1216,121 @@ circuit.measure(qreg_q[0], creg_result[0])
 circuit.measure(qreg_q[1], creg_result[1])
 circuit.measure(qreg_q[2], creg_result[2])
 # @columns [0,1,2,4,6,8,10,12,14,15,17,18,19,20,21,22]
+\end{lstlisting}
+
+
+
+\begin{lstlisting}[language=Python, caption= Interactive eavesdropping demo for bb84, label=code:iedbb84]
+import streamlit as st
+import numpy as np
+from qiskit import QuantumCircuit
+from qiskit.quantum_info import Statevector
+
+# Function to simulate BB84 protocol
+def bb84_protocol(num_bits, eavesdrop=False):
+    # Alice's random bits and bases
+    alice_bits = np.random.randint(2, size=num_bits)
+    alice_bases = np.random.choice(['Z', 'X'], size=num_bits)
+
+    # Bob's random bases
+    bob_bases = np.random.choice(['Z', 'X'], size=num_bits)
+
+    # Eve's interception (if eavesdropping)
+    if eavesdrop:
+        eve_bases = np.random.choice(['Z', 'X'], size=num_bits)
+    else:
+        eve_bases = None
+
+    # Create the quantum circuit
+    qc = QuantumCircuit(num_bits)
+    for i in range(num_bits):
+        if alice_bits[i] == 1:
+            qc.x(i)  # Apply X gate for bit 1
+        if alice_bases[i] == 'X':
+            qc.h(i)  # Apply Hadamard gate for X basis
+    qc.barrier()
+
+    # Eve's measurement (if eavesdropping)
+    if eavesdrop:
+        for i in range(num_bits):
+            if eve_bases[i] == 'X':
+                qc.h(i)
+        # Simulate Eve's measurement using Statevector
+        state = Statevector.from_instruction(qc)
+        eve_measurement = list(state.sample_counts(shots=1).keys())[0]
+        eve_measurement = [int(bit) for bit in eve_measurement]
+        qc.reset(range(num_bits))
+        for i in range(num_bits):
+            if eve_measurement[i] == 1:
+                qc.x(i)
+            if eve_bases[i] == 'X':
+                qc.h(i)
+        qc.barrier()
+
+    # Bob's measurement
+    for i in range(num_bits):
+        if bob_bases[i] == 'X':
+            qc.h(i)
+
+    # Simulate Bob's measurement using Statevector
+    state = Statevector.from_instruction(qc)
+    bob_measurement = list(state.sample_counts(shots=1).keys())[0]
+    bob_measurement = [int(bit) for bit in bob_measurement]
+
+    # Compare bases to generate the shared key
+    shared_key = []
+    for i in range(num_bits):
+        if alice_bases[i] == bob_bases[i]:
+            shared_key.append(bob_measurement[i])
+
+    # Check for eavesdropping
+    eavesdrop_detected = False
+    if eavesdrop:
+        for i in range(num_bits):
+            # if Eve uses a different base to measure, while alice and bob match on base choice, then 
+            # result will not be as expected. 
+            if (alice_bases[i] != eve_bases[i] and alice_bases[i] == bob_bases[i]):
+                if alice_bits[i] != bob_measurement[i]:
+                    eavesdrop_detected = True
+                    break
+
+    return alice_bits, alice_bases, bob_bases, bob_measurement, shared_key, eavesdrop_detected
+
+# Streamlit app
+st.title("Quantum Networking Demo: BB84 Protocol")
+st.write("Simulate quantum key distribution with Alice, Bob, and Eve!")
+
+# User inputs
+num_bits = st.slider("Number of qubits to send:", min_value=4, max_value=20, value=8)
+eavesdrop = st.checkbox("Enable eavesdropping (Eve)")
+
+# Run the simulation
+if st.button("Run Simulation"):
+    alice_bits, alice_bases, bob_bases, bob_measurement, shared_key, eavesdrop_detected = bb84_protocol(num_bits, eavesdrop)
+    col1, col2,col3,col4 = st.columns(4)
+
+    # Display results
+    with col1:
+        st.write("### Alice's Bits:")
+        st.write(alice_bits)
+        st.write("### Alice's Bases:")
+        st.write(alice_bases)
+    with col2:
+        st.write("### Bob's Bits:")
+        st.write(bob_measurement)
+        st.write("### Bob's Bases:")
+        st.write(bob_bases)
+    with col3:
+        st.write("### Shared Key:")
+        st.write(shared_key)
+    with col4:
+        if eavesdrop:
+            if eavesdrop_detected:
+                st.error("Eavesdropping detected!")
+            else:
+                st.success("No eavesdropping detected.")
+
+
 \end{lstlisting}
 
 \end{document}

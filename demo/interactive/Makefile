@@ -1,2 +1,2 @@
 all:
-	python3 main.py
+	streamlit run main.py

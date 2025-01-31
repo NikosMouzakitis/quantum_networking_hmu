@@ -66,7 +66,9 @@ def bb84_protocol(num_bits, eavesdrop=False):
     eavesdrop_detected = False
     if eavesdrop:
         for i in range(num_bits):
-            if alice_bases[i] != eve_bases[i] and alice_bases[i] == bob_bases[i]:
+            # if Eve uses a different base to measure, while alice and bob match on base choice, then 
+            # result will not be as expected. 
+            if (alice_bases[i] != eve_bases[i] and alice_bases[i] == bob_bases[i]):
                 if alice_bits[i] != bob_measurement[i]:
                     eavesdrop_detected = True
                     break
@@ -84,20 +86,25 @@ eavesdrop = st.checkbox("Enable eavesdropping (Eve)")
 # Run the simulation
 if st.button("Run Simulation"):
     alice_bits, alice_bases, bob_bases, bob_measurement, shared_key, eavesdrop_detected = bb84_protocol(num_bits, eavesdrop)
+    col1, col2,col3,col4 = st.columns(4)
 
     # Display results
-    st.write("### Alice's Bits:")
-    st.write(alice_bits)
-    st.write("### Alice's Bases:")
-    st.write(alice_bases)
-    st.write("### Bob's Bases:")
-    st.write(bob_bases)
-    st.write("### Bob's Measurement:")
-    st.write(bob_measurement)
-    st.write("### Shared Key:")
-    st.write(shared_key)
-    if eavesdrop:
-        if eavesdrop_detected:
-            st.error("Eavesdropping detected!")
-        else:
-            st.success("No eavesdropping detected.")
+    with col1:
+        st.write("### Alice's Bits:")
+        st.write(alice_bits)
+        st.write("### Alice's Bases:")
+        st.write(alice_bases)
+    with col2:
+        st.write("### Bob's Bits:")
+        st.write(bob_measurement)
+        st.write("### Bob's Bases:")
+        st.write(bob_bases)
+    with col3:
+        st.write("### Shared Key:")
+        st.write(shared_key)
+    with col4:
+        if eavesdrop:
+            if eavesdrop_detected:
+                st.error("Eavesdropping detected!")
+            else:
+                st.success("No eavesdropping detected.")
